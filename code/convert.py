@@ -28,6 +28,12 @@ def parse():
         type=str,
         default="../data/au_matrix_usr",
         help='dir where you want to store your AU matrix')
+    parser.add_argument(
+        '-r',
+        metavar='DIR/AU_R',
+        type=tuple,
+        default=(True, "../data/au_matrix_resize_usr"),
+        help='Save a resize version of the output')
     return parser.parse_args()
 
 
@@ -45,20 +51,21 @@ def get_data_vid(source):
                 ref_vid = vid_yt[:-4]
                 if ref_vid+".data" not in os.listdir(source+"/"+path_id_usr):
                     useOpenface(source+"/"+path_id_usr, vid_yt, ref_vid)
+
                 dict_matrix[path_id_usr][ref_vid] = [0, 0, 0, 0]
+    return dict_matrix
 
 
-def resize():
-    pass
+def resize(dict_matrix, target):
+    return dict_matrix
 
 
 def main():
-    # os.system("pwd")
     args = parse()
     source, target = args.s, args.t
-    #print(source)
-    get_data_vid(source)
-    # os.system("cd "+pwd)
+    dm = get_data_vid(source)
+    if args.r[0]:
+        resize(dm, args.r[1])
 
 
 if __name__ == '__main__':
