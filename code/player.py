@@ -17,14 +17,14 @@ class Player(Thread):
         self.recorder = rec
 
     def run(self):
-        print("Start playing")
+        print("start playing")
         cap = cv2.VideoCapture(self.video)
 
         while (cap.isOpened()):
             ret, frame = cap.read()
             if ret:
                 cv2.imshow('frame', frame)
-                if cv2.waitKey(50) & 0xFF == ord('q'):
+                if cv2.waitKey(25) & 0xFF == ord('q'):
                     break
             else:
                 break
@@ -32,5 +32,4 @@ class Player(Thread):
         cap.release()
         print("end playing")
         cv2.destroyAllWindows()
-        time.sleep(2)  # Capture 2 seconds after the video end
         self.recorder.end = True  # Stop the record

@@ -21,7 +21,7 @@ class Recorder(Thread):
         # Define the codec and create VideoWriter object
         fourcc = cv2.VideoWriter_fourcc(*'XVID')
         out = cv2.VideoWriter(self.output, fourcc, 20.0, (640, 480))
-        print("Staring record...")
+        print("start record...")
         while (cap.isOpened()):
             ret, frame = cap.read()
             if ret:
@@ -37,6 +37,6 @@ class Recorder(Thread):
         # Release everything if job is finished
         cap.release()
         out.release()
-        print("Record stoped")
-        print("Record saved")
+        print("record stoped")
+        print("record saved")
         cv2.destroyAllWindows()
