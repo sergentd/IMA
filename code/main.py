@@ -1,32 +1,43 @@
 # ! /usr/bin/python3
+# @Djavan Sergent
 from player import Player
 from recorder import Recorder
-from os import listdir
-from os.path import isfile, join
-
+from function import check_dir, list
 
 if __name__ == "__main__":
 
-    video_path = "./videos/show/"
-    record_path = "./videos/record/"
+    # media paths
+    video_path = "../data/videos/show/"
+    record_path = "../data/videos/record/"
 
-    videos = [f for f in listdir(video_path) if isfile(join(video_path, f))]
+    # Test if directory exists
+    check_dir(video_path)
+    check_dir(record_path)
 
-    id = input("N° utilisateur : ")
+    # List of medias to play
+    videos = list(video_path)
 
-    for video in videos:
-        # files to use
-        in_path = video_path + video
-        out_path = record_path + id + "_" + video
+    if len(videos) == 0:
+        print("unable to find video in directory " + video_path)
+    else:
 
-        # threads
-        face_recorder = Recorder(out_path)
-        media_player = Player(in_path, face_recorder)
+        # user id (training version only)
+        id = input("N° utilisateur : ")
 
-        # start the threads and run methods
-        media_player.start()
-        face_recorder.start()
+        # for each video, we play it and record the user face
+        for video in videos:
+            # files to use
+            in_path = video_path + video
+            out_path = record_path + id + "_" + video
 
-        # wait for all threads to sync
-        media_player.join()
-        face_recorder.join()
+            # threads
+            face_recorder = Recorder(out_path)
+            media_player = Player(in_path, face_recorder)
+
+            # start the threads and run methods
+            media_player.start()
+            face_recorder.start()
+
+            # wait for all threads to sync
+            media_player.join()
+            face_recorder.join()
