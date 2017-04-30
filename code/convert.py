@@ -33,19 +33,19 @@ def parse():
 
 def get_data_vid(source):
     """ Walk files into data to convert each videos """
-    def useOpenface(save_point, vid_yt , ref_vid):
-
-        os.system("ls ../../../poggioe0/OpenFace/build/bin/FeatureExtraction")
+    def useOpenface(save_point, vid_yt, ref_vid):
         command = "./../../OpenFace/build/bin/FeatureExtraction -f "
         command += vid_yt
-        command += " -of "+ref_vid+".txt -root "+save_point
+        command += " -of "+ref_vid+".data -root "+save_point
         os.system(command)
     dict_matrix = dd(lambda: dd(list))
     for path_id_usr in os.listdir(source):
         for vid_yt in os.listdir(source+"/"+path_id_usr):
-            ref_vid = vid_yt[:-4]
-            useOpenface(source+"/"+path_id_usr, vid_yt, ref_vid)
-            dict_matrix[path_id_usr][ref_vid] = [0, 0, 0, 0]
+            if vid_yt[-3:] == "avi":
+                ref_vid = vid_yt[:-4]
+                if ref_vid+".data" not in os.listdir(source+"/"+path_id_usr):
+                    useOpenface(source+"/"+path_id_usr, vid_yt, ref_vid)
+                dict_matrix[path_id_usr][ref_vid] = [0, 0, 0, 0]
 
 
 def resize():
@@ -53,10 +53,12 @@ def resize():
 
 
 def main():
+    # os.system("pwd")
     args = parse()
     source, target = args.s, args.t
-    # print(source)
+    #print(source)
     get_data_vid(source)
+    # os.system("cd "+pwd)
 
 
 if __name__ == '__main__':
