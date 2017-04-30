@@ -5,10 +5,10 @@ of Openface's Action Units (AU).
 """
 import argparse
 import os
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
 from collections import defaultdict as dd
+import pandas as pd
+# import matplotlib.pyplot as plt
+# import numpy as np
 
 
 def parse():
@@ -37,13 +37,14 @@ def parse():
     return parser.parse_args()
 
 
-def get_data_vid(source):
+def get_data_vid(source, target):
     """ Walk files into data to convert each videos """
     def useOpenface(save_point, vid_yt, ref_vid):
         command = "./../../OpenFace/build/bin/FeatureExtraction -f "
         command += vid_yt
         command += " -of "+ref_vid+".data -root "+save_point
         os.system(command)
+    max_time = 0
     dict_matrix = dd(lambda: dd(list))
     for path_id_usr in os.listdir(source):
         for vid_yt in os.listdir(source+"/"+path_id_usr):
@@ -51,21 +52,48 @@ def get_data_vid(source):
                 ref_vid = vid_yt[:-4]
                 if ref_vid+".data" not in os.listdir(source+"/"+path_id_usr):
                     useOpenface(source+"/"+path_id_usr, vid_yt, ref_vid)
+                dataframe = pd.read_csv(
+                    source+"/"+path_id_usr+"/"+ref_vid+".data")
+                action_units = [dt for dt in dataframe.columns if dt[:3]==" AU"]
+                dataframe = dataframe[
+                    dataframe.columns.intersection(action_units)]
+                dict_matrix[path_id_usr][ref_vid] = dataframe
+                os.system("mkdir "+target+"/"+path_id_usr)
+                os.system("touch "+target+"/"+path_id_usr+"/"+ref_vid+".mt")
+                with open(target+"/"+path_id_usr+"/"+ref_vid+".mt", "w") as myfile:
+                    dataframe.to_csv(myfile)
+                if dataframe.shape[0] > max_time:
+                    max_time = dataframe.shape[0]
+    return dict_matrix, max_time
 
-                dict_matrix[path_id_usr][ref_vid] = [0, 0, 0, 0]
-    return dict_matrix
 
-
-def resize(dict_matrix, target):
+def resize(dict_matrix, target, max_time):
+    """ permit to do a resize of the matrix """
+    def interpolation(dataframe, max_time):
+        """how to do an interpolation ... ?? """
+        # TO DO
+        return dataframe
+    os.system("ls "+target)
+    # print(dict_matrix, target, max_time)
+    for path_id_usr in dict_matrix:
+        for ref_vid in dict_matrix[path_id_usr]:
+            dict_matrix[path_id_usr][ref_vid] = interpolation(
+                dict_matrix[path_id_usr][ref_vid], max_time)
+            dataframe = dict_matrix[path_id_usr][ref_vid]
+            os.system("mkdir "+target+"/"+path_id_usr)
+            os.system("touch "+target+"/"+path_id_usr+"/"+ref_vid+".mt")
+            with open(target+"/"+path_id_usr+"/"+ref_vid+".mt", "w") as myfile:
+                dataframe.to_csv(myfile)
     return dict_matrix
 
 
 def main():
     args = parse()
     source, target = args.s, args.t
-    dm = get_data_vid(source)
+    dm, max_time = get_data_vid(source, target)
     if args.r[0]:
-        resize(dm, args.r[1])
+        dm = resize(dm, args.r[1], max_time)
+    return dm
 
 
 if __name__ == '__main__':
