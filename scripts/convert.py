@@ -26,13 +26,13 @@ def parse():
         '-t',
         metavar='DIR/AU',
         type=str,
-        default="../data/au_matrix_usr",
+        default="../data/au_matrix/usr",
         help='dir where you want to store your AU matrix')
     parser.add_argument(
         '-r',
         metavar='DIR/AU_R',
         type=tuple,
-        default=(True, "../data/au_matrix_resize_usr"),
+        default=(True, "../data/au_matrix/resize"),
         help='Save a resize version of the output')
     return parser.parse_args()
 
@@ -89,6 +89,7 @@ def resize(dict_matrix, target, max_time):
 
 def main():
     args = parse()
+    print(args)
     source, target = args.s, args.t
     dm, max_time = get_data_vid(source, target)
     if args.r[0]:
