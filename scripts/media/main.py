@@ -1,11 +1,12 @@
 # ! /usr/bin/python3
 # @Djavan Sergent
-from player import Player
-from recorder import Recorder
-from function import check_dir, list, afpath
-from pygame import mixer
 from os.path import exists
 
+from pygame import mixer
+from recorder import Recorder
+
+from media.function import check_dir, list, afpath
+from media.player import Player
 
 if __name__ == "__main__":
 
