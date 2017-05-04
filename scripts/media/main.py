@@ -5,8 +5,8 @@ from os.path import exists
 from pygame import mixer
 from recorder import Recorder
 
-from media.function import check_dir, list, afpath
-from media.player import Player
+from function import check_dir, list, afpath
+from player import Player
 
 if __name__ == "__main__":
 
