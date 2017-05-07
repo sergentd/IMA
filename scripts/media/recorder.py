@@ -10,8 +10,9 @@ class Recorder(Thread):
     @Djavan Sergent
     """
 
-    def __init__(self, output):
+    def __init__(self, output, params):
         Thread.__init__(self)
+        self.par = params
         self.output = output
         self.end = False
 
@@ -21,15 +22,12 @@ class Recorder(Thread):
         # Define the codec and create VideoWriter object
         fourcc = cv2.VideoWriter_fourcc(*'XVID')
         out = cv2.VideoWriter(self.output, fourcc, 20.0, (640, 480))
-        print("start record...")
+        if self.par.env != "prod":
+            print("start record...")
         while (cap.isOpened()):
             ret, frame = cap.read()
             if ret:
                 out.write(frame)
-
-                # cv2.imshow('frame', frame)
-                # if cv2.waitKey(25) & 0xFF == ord('q'):
-                #     break
                 if self.end:
                     break
             else:
@@ -37,6 +35,7 @@ class Recorder(Thread):
         # Release everything if job is finished
         cap.release()
         out.release()
-        print("record stoped")
-        print("record saved")
+        if self.par.env != "prod":
+            print("record stoped")
+            print("record saved")
         cv2.destroyAllWindows()

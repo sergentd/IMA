@@ -7,7 +7,7 @@ from function import check_dir, list, afpath
 from player import Player
 from pygame import mixer
 from recorder import Recorder
-from interface import Interface
+from interface import EvalView
 from params import Params
 
 if __name__ == "__main__":
@@ -30,7 +30,7 @@ if __name__ == "__main__":
         print("unable to find video in directory " + par.video_path)
     else:
         # user id (training version only)
-        if par.env == ("dev" or "test"):
+        if par.env != "prod":
             par.set_user(input("ID utilisateur : "))
         else:
             userid = "0"
@@ -46,12 +46,12 @@ if __name__ == "__main__":
             audio_file = par.audio_path + afpath(video)
 
             # Evaluation interface
-            window = Interface(video=video, params=par, evaluator=ev)
+            window = EvalView(video=video, params=par, evaluator=ev)
             window.create()
 
             # threads
-            face_recorder = Recorder(out_path)
-            media_player = Player(in_path, face_recorder)
+            face_recorder = Recorder(output=out_path, params=par)
+            media_player = Player(video=in_path, rec=face_recorder, params=par)
             if exists(audio_file):
                 mixer.music.load(audio_file)
 
