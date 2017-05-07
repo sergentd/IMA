@@ -13,7 +13,7 @@ class Params:
         self.video_path = "../../data/vid_show/"  # video to show
         self.record_path = "../../data/vid_usr/"  # face record while showing videos
         self.audio_path = "../../data/audio/"  # audio of videos
-        self.eval_path = "../../data/vid_eval/"  # audio of videos
+        self.eval_path = "../../data/evals/"  # evaluations of videos
 
     def set_user(self, user_id):
         self.user = user_id

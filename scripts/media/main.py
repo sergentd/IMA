@@ -2,13 +2,13 @@
 # @Djavan Sergent
 from os.path import exists
 
-from pygame import mixer
-from recorder import Recorder
+from evaluator import Evaluator
 from function import check_dir, list, afpath
 from player import Player
+from pygame import mixer
+from recorder import Recorder
+from interface import Interface
 from params import Params
-from evaluator import Evaluator
-from interface.interface import Interface
 
 if __name__ == "__main__":
     # Parameters

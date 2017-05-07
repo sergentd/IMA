@@ -25,6 +25,7 @@ class Interface:
         self.slider = tk.Scale(self.window, from_=0, to=10, length=self.size_x, tickinterval=1, orient=tk.HORIZONTAL)
         self.slider.pack()
         self.btn_next.pack()
+        self.window.attributes("-topmost", True)
 
     def cmd_eval(self):
         evaluation = self.par.user + ";" + self.video + ";" + str(self.slider.get())
