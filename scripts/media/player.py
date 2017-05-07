@@ -7,7 +7,7 @@ import cv2
 
 class Player(Thread):
     """
-    A class which display vidéo
+    A class which display videos
     @Djavan Sergent
     """
 

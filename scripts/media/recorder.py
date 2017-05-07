@@ -6,7 +6,7 @@ import cv2
 
 class Recorder(Thread):
     """
-    A class which capture vidéo
+    A class which capture videos of user's face
     @Djavan Sergent
     """
 
