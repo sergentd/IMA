@@ -6,6 +6,7 @@ from pygame import mixer
 from recorder import Recorder
 from function import check_dir, list, afpath
 from player import Player
+from interface.interface import Interface
 
 if __name__ == "__main__":
 
@@ -26,7 +27,6 @@ if __name__ == "__main__":
     if len(videos) == 0:
         print("unable to find video in directory " + video_path)
     else:
-
         # user id (training version only)
         userid = input("ID utilisateur : ")
 
@@ -35,6 +35,9 @@ if __name__ == "__main__":
 
         # for each video, we play it and record the user face
         for video in videos:
+            window = Interface()
+            window.create()
+
             # files to use
             in_path = video_path + video
             out_path = usr_dir + video
@@ -57,3 +60,5 @@ if __name__ == "__main__":
             face_recorder.join()
             if exists(audio_file):
                 mixer.music.stop()
+
+            window.show()
