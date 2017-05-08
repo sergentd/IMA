@@ -1,7 +1,7 @@
 # ! /usr/bin/python3
 # @Djavan Sergent
 from os.path import exists
-
+import database.dbmanager as db
 from evaluator import Evaluator
 from function import check_dir, list, afpath
 from player import Player
@@ -11,6 +11,15 @@ from interface import EvalView
 from params import Params
 
 if __name__ == "__main__":
+
+    # Database init
+    db.Base.metadata.create_all(db.engine)
+
+    # Création de l'instance de l'ORM
+    session = db.Session()
+
+    session.commit()
+
     # Parameters
     par = Params(env="dev")
     ev = Evaluator(params=par)
