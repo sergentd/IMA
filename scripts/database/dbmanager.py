@@ -13,4 +13,4 @@ Session = sessionmaker(bind=engine)
 # Classes which needed a Base, no on top import
 from video import Video
 from user import User
-from videoevallink import VideoUserLink  # Used for table creation ! do not delete this line !
+from videouserlink import VideoUserLink  # Used for table creation ! do not delete this line !
