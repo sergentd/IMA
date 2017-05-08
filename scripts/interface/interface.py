@@ -7,6 +7,7 @@
     - DistractView : display a distraction task
 """
 import tkinter as tk
+from PIL import Image, ImageTk
 
 
 class EvalView:
@@ -27,10 +28,32 @@ class EvalView:
     def create(self):
         self.window.wm_title(self.title)
         self.window.config(background=self.background)
-        btn_next = tk.Button(self.window, text="Ok", command=self.cmd_eval)
+        btn_next = tk.Button(self.window, text="Ok", command=self.cmd_eval, width=30)
         self.slider = tk.Scale(self.window, from_=0, to=10, length=self.size_x, tickinterval=1, orient=tk.HORIZONTAL)
-        self.slider.pack()
-        btn_next.pack()
+        self.slider.grid(row=0, columnspan=20)
+
+        # Images
+        img_neutre = Image.open("../../ressources/img/neutre.png")
+        img_sourire = Image.open("../../ressources/img/sourire.png")
+        img_rire = Image.open("../../ressources/img/rire.png")
+
+        # TK compatible
+        tk_neutre = ImageTk.PhotoImage(img_neutre)
+        tk_sourire = ImageTk.PhotoImage(img_sourire)
+        tk_rire = ImageTk.PhotoImage(img_rire)
+
+        # Label
+        lb_neutre = tk.Label(image=tk_neutre)
+        lb_neutre.image = tk_neutre
+        lb_sourire = tk.Label(image=tk_sourire)
+        lb_sourire.image = tk_sourire
+        lb_rire = tk.Label(image=tk_rire)
+        lb_rire.image = tk_rire
+        lb_neutre.grid(row=1, column=0, columnspan=2)
+        lb_sourire.grid(row=1, column=10, columnspan=2)
+        lb_rire.grid(row=1, column=19, columnspan=2)
+
+        btn_next.grid(row=2, column=10, columnspan=2)
         self.window.attributes("-topmost", True)
 
     def cmd_eval(self):
