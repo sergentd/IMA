@@ -22,3 +22,7 @@ class User(db.Base):
         :return: Boolean - False if not in database
         """
         return session.query(exists().where(User.name == self.name)).scalar()
+
+    def __repr__(self):
+        return "<User(id='%s', name='%s')>" \
+               % (self.id, self.name)
