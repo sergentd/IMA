@@ -3,10 +3,10 @@
 # import database.dbmanager as db
 from evaluator import Evaluator
 from function import check_dir, list, check_vlc
+from params import Params
 from player import Player
 from recorder import Recorder
 from views import EvalView
-from params import Params
 
 if __name__ == "__main__":
 
