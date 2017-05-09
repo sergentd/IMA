@@ -8,10 +8,11 @@ import os
 from collections import defaultdict as dd
 import pandas as pd
 # import matplotlib.pyplot as plt
-# import numpy as np
+import numpy as np
 
 
 def parse():
+    """Parse."""
     parser = argparse.ArgumentParser(description="""
         Convert videos into matrix which
         of Openface's Action Units.
@@ -38,7 +39,7 @@ def parse():
 
 
 def get_data_vid(source, target):
-    """ Walk files into data to convert each videos """
+    """Walk files into data to convert each videos."""
     def useOpenface(save_point, vid_yt, ref_vid):
         command = "./../../OpenFace/build/bin/FeatureExtraction -f "
         command += vid_yt
@@ -68,12 +69,21 @@ def get_data_vid(source, target):
 
 
 def resize(dict_matrix, target, max_time):
-    """ permit to do a resize of the matrix """
+    """Permit to do a resize of the matrix."""
     def interpolation(dataframe, max_time):
-        """how to do an interpolation ... ?? """
-        # TO DO
+
+        old_matrix = dataframe.as_matrix()
+        old_dim, n_col = old_matrix.shape[0], old_matrix.shape[1]
+        new_dim = max_time
+        new_matrix = np.zeros((max_time, n_col))
+        nls, ols = np.linspace(0, 1, new_dim), np.linspace(0, 1, old_dim)
+        for col in range(n_col):
+            new_matrix[:, col] = np.interp(nls, ols, old_matrix[:, col])
+        coll = list(dataframe)
+        dataframe = pd.DataFrame(new_matrix, columns=coll)
         return dataframe
-    os.system("ls "+target)
+
+    # os.system("ls "+target)
     # print(dict_matrix, target, max_time)
     for path_id_usr in dict_matrix:
         for ref_vid in dict_matrix[path_id_usr]:
@@ -88,8 +98,8 @@ def resize(dict_matrix, target, max_time):
 
 
 def main():
+    """Do everything."""
     args = parse()
-    print(args)
     source, target = args.s, args.t
     dm, max_time = get_data_vid(source, target)
     if args.r[0]:
