@@ -2,12 +2,20 @@
 # @Djavan Sergent
 from os import listdir, makedirs
 from os.path import isfile, join, exists, basename, splitext
+from interface import ChooseMediaPlayerView
 
 
 # check the existence of a directory
 def check_dir(dir):
     if not exists(dir):
         makedirs(dir)
+
+
+# check the existance of vlc program
+def check_vlc(par):
+    if not exists(par.media_player_path):
+        cvmp = ChooseMediaPlayerView(params=par)
+        cvmp.show()
 
 
 # list of files in a directory

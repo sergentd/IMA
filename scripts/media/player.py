@@ -1,7 +1,7 @@
 # ! /usr/bin/python3
-import numpy as np
 from threading import Thread
-import cv2
+import subprocess
+import time
 
 
 class Player(Thread):
@@ -16,22 +16,33 @@ class Player(Thread):
         self.video = video
         self.recorder = rec
 
+    # def run(self):
+    #     if self.par.env != "prod":
+    #         print("start playing")
+    #     cap = cv2.VideoCapture(self.video)
+    #
+    #     while (cap.isOpened()):
+    #         ret, frame = cap.read()
+    #         if ret:
+    #             cv2.imshow('MakeMeLaught', frame)
+    #             if cv2.waitKey(31) & 0xFF == ord('q'):
+    #                 break
+    #         else:
+    #             break
+    #
+    #     cap.release()
+    #     if self.par.env != "prod":
+    #         print("end playing")
+    #     cv2.destroyAllWindows()
+    #     self.recorder.end = True  # Stop the record
+
     def run(self):
         if self.par.env != "prod":
             print("start playing")
-        cap = cv2.VideoCapture(self.video)
 
-        while (cap.isOpened()):
-            ret, frame = cap.read()
-            if ret:
-                cv2.imshow('MakeMeLaught', frame)
-                if cv2.waitKey(25) & 0xFF == ord('q'):
-                    break
-            else:
-                break
+        p = subprocess.call([self.par.media_player_path, self.video, '--play-and-exit', '--qt-video-autoresize'])
 
-        cap.release()
         if self.par.env != "prod":
             print("end playing")
-        cv2.destroyAllWindows()
+        time.sleep(2)
         self.recorder.end = True  # Stop the record
