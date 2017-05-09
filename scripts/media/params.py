@@ -11,9 +11,9 @@ class Params:
         self.name = "params"
         self.env = env
         self.user = ""
-        self.video_path = "../../data/vid_show/"  # video to show
-        self.record_path = "../../data/vid_usr/"  # face record while showing videos
-        self.eval_path = "../../data/evals/"  # evaluations of videos
+        self.video_path = "../data/vid_show/"  # video to show
+        self.record_path = "../data/vid_usr/"  # face record while showing videos
+        self.eval_path = "../data/evals/"  # evaluations of videos
         if platform.system() == "Windows":
             self.media_player_path = "C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe"
         else:
