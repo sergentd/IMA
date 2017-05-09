@@ -122,12 +122,12 @@ class ChooseMediaPlayerView:
         self.window.wm_title(self.title)
         self.window.config(background=self.background)
         self.window.attributes("-topmost", True)
-        btn_next = tk.Button(self.window, text="Choose a media player", command=self.cmd_choose, width=30)
+        btn_next = tk.Button(self.window, text="Select VLC directory", command=self.cmd_choose, width=30)
         btn_next.pack()
 
     def cmd_choose(self):
-        self.par.vlc_path = filedialog.askopenfilename()
-        print("Média player : ", self.par.vlc_path)
+        self.par.media_player_path = filedialog.askopenfilename()
+        print("Média player : ", self.par.media_player_path)
         self.close()
 
     def show(self):
