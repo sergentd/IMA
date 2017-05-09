@@ -1,11 +1,11 @@
 # ! /usr/bin/python3
 # @Djavan Sergent
-from os.path import exists
+# from os.path import exists
 # import database.dbmanager as db
 from evaluator import Evaluator
 from function import check_dir, list, afpath
 from player import Player
-from pygame import mixer
+# from pygame import mixer
 from recorder import Recorder
 from interface import EvalView
 from params import Params
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     ev = Evaluator(params=par)
 
     # Audio mixer init
-    mixer.init()
+    # mixer.init()
 
     # Test if directory exists
     check_dir(par.video_path)
@@ -52,7 +52,7 @@ if __name__ == "__main__":
             # files to use
             in_path = par.video_path + video
             out_path = usr_dir + video
-            audio_file = par.audio_path + afpath(video)
+            # audio_file = par.audio_path + afpath(video)
 
             # Evaluation interface
             window = EvalView(video=video, params=par, evaluator=ev)
@@ -61,20 +61,20 @@ if __name__ == "__main__":
             # threads
             face_recorder = Recorder(output=out_path, params=par)
             media_player = Player(video=in_path, rec=face_recorder, params=par)
-            if exists(audio_file):
-                mixer.music.load(audio_file)
+            # if exists(audio_file):
+            #   mixer.music.load(audio_file)
 
             # start the threads and run methods
+            # if exists(audio_file):
+            #     mixer.music.play()
             media_player.start()
             face_recorder.start()
-            if exists(audio_file):
-                mixer.music.play()
 
             # wait for all threads to sync
             media_player.join()
             face_recorder.join()
-            if exists(audio_file):
-                mixer.music.stop()
+            # if exists(audio_file):
+            #     mixer.music.stop()
 
             # evaluation tools
             window.show()
