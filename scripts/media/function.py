@@ -13,7 +13,7 @@ def check_dir(dir):
 
 # check the existance of vlc program
 def check_vlc(par):
-    if not exists(par.vlc_path):
+    if not exists(par.media_player_path):
         cvmp = ChooseMediaPlayerView(params=par)
         cvmp.show()
 
