@@ -1,12 +1,12 @@
 # ! /usr/bin/python3
 # @Djavan Sergent
 # import database.dbmanager as db
-from evaluator import Evaluator
+from media.evaluator import Evaluator
 from function import check_dir, list, check_vlc
-from params import Params
-from player import Player
-from recorder import Recorder
-from views import EvalView
+from media.params import Params
+from media.player import Player
+from media.recorder import Recorder
+from interface.views import EvalView
 
 if __name__ == "__main__":
 
