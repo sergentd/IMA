@@ -7,6 +7,7 @@
     - DistractView : display a distraction task
 """
 import tkinter as tk
+from tkinter import filedialog
 from PIL import Image, ImageTk
 
 
@@ -101,6 +102,42 @@ class RecapView:
     def close(self):
         self.window.quit()
         self.window.destroy()
+
+
+class ChooseMediaPlayerView:
+    """
+    A class which display distraction task
+    """
+
+    def __init__(self, params, title="MakeMeLaught", bg="#FFFFFF", sizex=100, sizey=40):
+        self.window = tk.Tk()
+        self.par = params
+        self.title = title
+        self.background = bg
+        self.size_x = sizex
+        self.size_y = sizey
+        self.path = ""
+
+    def create(self):
+        self.window.wm_title(self.title)
+        self.window.config(background=self.background)
+        self.window.attributes("-topmost", True)
+        btn_next = tk.Button(self.window, text="Choose a media player", command=self.cmd_choose, width=30)
+        btn_next.pack()
+
+    def cmd_choose(self):
+        self.par.vlc_path = filedialog.askopenfilename()
+        print("Média player : ", self.par.vlc_path)
+        self.close()
+
+    def show(self):
+        self.create()
+        self.window.mainloop()
+
+    def close(self):
+        self.window.quit()
+        self.window.destroy()
+
 
 
 class DistractView:
