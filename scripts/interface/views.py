@@ -139,7 +139,6 @@ class ChooseMediaPlayerView:
         self.window.destroy()
 
 
-
 class DistractView:
     """
     A class which display distraction task
