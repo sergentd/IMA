@@ -3,7 +3,7 @@
 # from os.path import exists
 # import database.dbmanager as db
 from evaluator import Evaluator
-from function import check_dir, list, afpath
+from function import check_dir, list, afpath, check_vlc
 from player import Player
 # from pygame import mixer
 from recorder import Recorder
@@ -28,6 +28,7 @@ if __name__ == "__main__":
     # mixer.init()
 
     # Test if directory exists
+    check_vlc(par)
     check_dir(par.video_path)
     check_dir(par.record_path)
     check_dir(par.eval_path)
