@@ -13,7 +13,6 @@ class Params:
         self.user = ""
         self.video_path = "../../data/vid_show/"  # video to show
         self.record_path = "../../data/vid_usr/"  # face record while showing videos
-        self.audio_path = "../../data/audio/"  # audio of videos
         self.eval_path = "../../data/evals/"  # evaluations of videos
         if platform.system() == "Windows":
             self.media_player_path = "C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe"
