@@ -34,9 +34,9 @@ class EvalView:
         self.slider.grid(row=0, columnspan=20)
 
         # Images
-        img_neutre = Image.open("../../ressources/img/neutre.png")
-        img_sourire = Image.open("../../ressources/img/sourire.png")
-        img_rire = Image.open("../../ressources/img/rire.png")
+        img_neutre = Image.open("../ressources/img/neutre.png")
+        img_sourire = Image.open("../ressources/img/sourire.png")
+        img_rire = Image.open("../ressources/img/rire.png")
 
         # TK compatible
         tk_neutre = ImageTk.PhotoImage(img_neutre)
