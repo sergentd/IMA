@@ -16,33 +16,13 @@ class Player(Thread):
         self.video = video
         self.recorder = rec
 
-    # def run(self):
-    #     if self.par.env != "prod":
-    #         print("start playing")
-    #     cap = cv2.VideoCapture(self.video)
-    #
-    #     while (cap.isOpened()):
-    #         ret, frame = cap.read()
-    #         if ret:
-    #             cv2.imshow('MakeMeLaught', frame)
-    #             if cv2.waitKey(31) & 0xFF == ord('q'):
-    #                 break
-    #         else:
-    #             break
-    #
-    #     cap.release()
-    #     if self.par.env != "prod":
-    #         print("end playing")
-    #     cv2.destroyAllWindows()
-    #     self.recorder.end = True  # Stop the record
-
     def run(self):
         if self.par.env != "prod":
             print("start playing")
 
-        p = subprocess.call([self.par.media_player_path, self.video, '--play-and-exit', '--qt-video-autoresize'])
+        subprocess.call([self.par.media_player_path, self.video, '--play-and-exit', '--qt-video-autoresize'])
 
         if self.par.env != "prod":
             print("end playing")
-        time.sleep(2)
+        time.sleep(1)
         self.recorder.end = True  # Stop the record
