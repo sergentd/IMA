@@ -40,7 +40,7 @@ class Player(Thread):
         if self.par.env != "prod":
             print("start playing")
 
-        p = subprocess.call([self.par.cmd_vlc, self.video, '--play-and-exit', '--qt-video-autoresize'])
+        p = subprocess.call([self.par.media_player_path, self.video, '--play-and-exit', '--qt-video-autoresize'])
 
         if self.par.env != "prod":
             print("end playing")
