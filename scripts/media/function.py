@@ -2,7 +2,7 @@
 # @Djavan Sergent
 from os import listdir, makedirs
 from os.path import isfile, join, exists, basename, splitext
-from interface import ChooseMediaPlayerView
+from views import ChooseMediaPlayerView
 
 
 # check the existence of a directory
