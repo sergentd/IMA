@@ -1,4 +1,5 @@
 #! /usr/bin/python3
+import platform
 
 
 class Params:
@@ -14,6 +15,10 @@ class Params:
         self.record_path = "../../data/vid_usr/"  # face record while showing videos
         self.audio_path = "../../data/audio/"  # audio of videos
         self.eval_path = "../../data/evals/"  # evaluations of videos
+        if platform.system() == "Windows":
+            self.cmd_vlc = "./vlc/vlc.exe"
+        else:
+            self.cmd_vlc = "vlc"
 
     def set_user(self, user_id):
         self.user = user_id
