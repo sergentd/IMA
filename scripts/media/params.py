@@ -16,9 +16,9 @@ class Params:
         self.audio_path = "../../data/audio/"  # audio of videos
         self.eval_path = "../../data/evals/"  # evaluations of videos
         if platform.system() == "Windows":
-            self.cmd_vlc = "./vlc/vlc.exe"
+            self.media_player_path = "C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe"
         else:
-            self.cmd_vlc = "vlc"
+            self.media_player_path = "/usr/bin/vlc"
 
     def set_user(self, user_id):
         self.user = user_id
