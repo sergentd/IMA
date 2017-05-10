@@ -3,6 +3,7 @@
     @ Djavan Sergent
     Interfaces of the application.
     - EvalView : display evaluation tools (slider)
+    - ChooseMediaPlayerView : display filedialog to localize VLC
     - RecapView : display a recapitulation of evaluations
     - DistractView : display a distraction task
 """
@@ -58,7 +59,7 @@ class EvalView:
         self.window.attributes("-topmost", True)
 
     def cmd_eval(self):
-        evaluation = self.par.user + ";" + self.video + ";" + str(self.slider.get())
+        evaluation = [self.par.user, self.video, str(self.slider.get())]
         self.ev.add(evaluation)
         if self.par.env != "prod":
             print("evaluation saved")
@@ -85,13 +86,19 @@ class RecapView:
         self.background = bg
         self.size_x = sizex
         self.size_y = sizey
-        pass
 
     def create(self):
         self.window.wm_title(self.title)
         self.window.config(background=self.background)
         self.window.attributes("-topmost", True)
-        pass
+        for i in range(len(self.ev.evaluations)):
+            e = self.ev.evaluations[i]
+            lbl_avi = tk.Label(master=self.window, text=e[1], bg='#FFFFFF', width=25)
+            lbl_grade = tk.Label(master=self.window, text=e[2], bg='#FFFFFF', width=25)
+            lbl_avi.grid(row=i, column=0)
+            lbl_grade.grid(row=i, column=1)
+        btn_close = tk.Button(master=self.window, text="Close", command=self.cmd_recap, width=50)
+        btn_close.grid(row=len(self.ev.evaluations), columnspan=2)
 
     def cmd_recap(self):
         self.close()
