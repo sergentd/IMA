@@ -17,6 +17,6 @@ class Evaluator:
         file_path = self.par.eval_path + self.par.user + ".csv"
         output = "user_id;video_name;grade\n"
         for e in self.evaluations:
-            output += e + "\n"
+            output += e[0]+";"+e[1]+";"+e[2] + "\n"
         open(file_path, mode="w+").write(output)
         print("evaluation saved in " + file_path)
