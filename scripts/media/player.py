@@ -20,7 +20,7 @@ class Player(Thread):
         if self.par.env != "prod":
             print("start playing")
 
-        subprocess.call([self.par.media_player_path, self.video, '--play-and-exit', '--qt-video-autoresize'])
+        subprocess.call([self.par.media_player_path, self.video, '--play-and-exit', '-I dummy', '--fullscreen'])
 
         if self.par.env != "prod":
             print("end playing")
