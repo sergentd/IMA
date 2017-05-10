@@ -1,22 +1,14 @@
 # ! /usr/bin/python3
 # @Djavan Sergent
-# import database.dbmanager as db
-from media.evaluator import Evaluator
+from random import shuffle
 from function import check_dir, list, check_vlc
+from interface.views import EvalView, RecapView
+from media.evaluator import Evaluator
 from media.params import Params
 from media.player import Player
 from media.recorder import Recorder
-from interface.views import EvalView
 
 if __name__ == "__main__":
-
-    # Database init
-    # db.Base.metadata.create_all(db.engine)
-
-    # Création de l'instance de l'ORM
-    # session = db.Session()
-
-    # session.commit()
 
     # Parameters
     par = Params(env="dev")
@@ -35,23 +27,21 @@ if __name__ == "__main__":
         print("unable to find video in directory " + par.video_path)
     else:
         # user id (training version only)
-        if par.env != "prod":
-            par.set_user(input("ID utilisateur : "))
-        else:
-            userid = "0"
+        par.set_user(input("ID utilisateur : "))
 
         usr_dir = par.record_path + par.user + '/'
         check_dir(usr_dir)
 
         # for each video, we play it and record the user face
+        shuffle(videos)  # random order
         for video in videos:
             # files to use
             in_path = par.video_path + video
             out_path = usr_dir + video
 
             # Evaluation interface
-            window = EvalView(video=video, params=par, evaluator=ev)
-            window.create()
+            eval_view = EvalView(video=video, params=par, evaluator=ev)
+            eval_view.create()
 
             # threads
             face_recorder = Recorder(output=out_path, params=par)
@@ -66,5 +56,9 @@ if __name__ == "__main__":
             face_recorder.join()
 
             # evaluation tools
-            window.show()
+            eval_view.show()
         ev.write()
+        title = "Récapitulatif : " + par.user
+        recap_view = RecapView(params=par, evaluator=ev, title=title)
+        recap_view.create()
+        recap_view.show()
