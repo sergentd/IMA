@@ -24,5 +24,5 @@ class Player(Thread):
 
         if self.par.env != "prod":
             print("end playing")
-        time.sleep(1)
+        time.sleep(2)
         self.recorder.end = True  # Stop the record
