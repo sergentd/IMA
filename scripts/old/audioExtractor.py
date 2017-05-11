@@ -3,8 +3,9 @@
 # Extract audio (wav) files from avi files using ffmpeg
 import subprocess
 from os.path import basename, splitext, abspath
+
+from function import check_dir, list
 from params import Params
-from media.function import check_dir, list
 
 par = Params()
 check_dir(par.audio_path)
