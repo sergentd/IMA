@@ -15,8 +15,20 @@ class Evaluator:
 
     def write(self):
         file_path = self.par.eval_path + self.par.user + ".csv"
-        output = "user_id;video_name;grade\n"
+        output = "user_id,video_name,grade,funny\n"
         for e in self.evaluations:
-            output += e[0]+";"+e[1]+";"+e[2] + "\n"
+            output += str(e.user) + "," + e.video+"," + str(e.grade) + "," +str(e.funny) + "\n"
         open(file_path, mode="w+").write(output)
         print("evaluation saved in " + file_path)
+
+
+class Evaluation:
+    def __init__(self, evaluator, user="", video="", grade="", funny=""):
+        self.master = evaluator
+        self.user = user
+        self.video = video
+        self.grade = grade
+        self.funny = funny
+
+    def add(self):
+        self.master.add(self)
