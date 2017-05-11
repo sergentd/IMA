@@ -43,25 +43,27 @@ def get_data_vid(source, target):
     def useOpenface(save_point, vid_yt, ref_vid):
         command = "./../../OpenFace/build/bin/FeatureExtraction -f "
         command += vid_yt
-        command += " -of "+ref_vid+".data -root "+save_point
+        command += " -of " + ref_vid + ".data -root " + save_point
         os.system(command)
     max_time = 0
     dict_matrix = dd(lambda: dd(list))
     for path_id_usr in os.listdir(source):
-        for vid_yt in os.listdir(source+"/"+path_id_usr):
+        for vid_yt in os.listdir(source + "/" + path_id_usr):
             if vid_yt[-3:] == "avi":
                 ref_vid = vid_yt[:-4]
-                if ref_vid+".data" not in os.listdir(source+"/"+path_id_usr):
-                    useOpenface(source+"/"+path_id_usr, vid_yt, ref_vid)
+                if ref_vid + ".data" not in os.listdir(source + "/" + path_id_usr):
+                    useOpenface(source + "/" + path_id_usr, vid_yt, ref_vid)
                 dataframe = pd.read_csv(
-                    source+"/"+path_id_usr+"/"+ref_vid+".data")
-                action_units = [dt for dt in dataframe.columns if dt[:3]==" AU"]
+                    source + "/" + path_id_usr + "/" + ref_vid + ".data")
+                action_units = [
+                    dt for dt in dataframe.columns if dt[:3] == " AU"]
                 dataframe = dataframe[
                     dataframe.columns.intersection(action_units)]
                 dict_matrix[path_id_usr][ref_vid] = dataframe
-                os.system("mkdir "+target+"/"+path_id_usr)
-                os.system("touch "+target+"/"+path_id_usr+"/"+ref_vid+".mt")
-                with open(target+"/"+path_id_usr+"/"+ref_vid+".mt", "w") as myfile:
+                os.system("mkdir " + target + "/" + path_id_usr)
+                os.system("touch " + target + "/" +
+                          path_id_usr + "/" + ref_vid + ".mt")
+                with open(target + "/" + path_id_usr + "/" + ref_vid + ".mt", "w") as myfile:
                     dataframe.to_csv(myfile)
                 if dataframe.shape[0] > max_time:
                     max_time = dataframe.shape[0]
@@ -90,9 +92,10 @@ def resize(dict_matrix, target, max_time):
             dict_matrix[path_id_usr][ref_vid] = interpolation(
                 dict_matrix[path_id_usr][ref_vid], max_time)
             dataframe = dict_matrix[path_id_usr][ref_vid]
-            os.system("mkdir "+target+"/"+path_id_usr)
-            os.system("touch "+target+"/"+path_id_usr+"/"+ref_vid+".mt")
-            with open(target+"/"+path_id_usr+"/"+ref_vid+".mt", "w") as myfile:
+            os.system("mkdir " + target + "/" + path_id_usr)
+            os.system("touch " + target + "/" +
+                      path_id_usr + "/" + ref_vid + ".mt")
+            with open(target + "/" + path_id_usr + "/" + ref_vid + ".mt", "w") as myfile:
                 dataframe.to_csv(myfile)
     return dict_matrix
 
