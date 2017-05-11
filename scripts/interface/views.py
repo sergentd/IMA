@@ -2,14 +2,91 @@
 """
     @ Djavan Sergent
     Interfaces of the application.
+    - IdView : display an ID insert dialog
     - EvalView : display evaluation tools (slider)
     - ChooseMediaPlayerView : display filedialog to localize VLC
     - RecapView : display a recapitulation of evaluations
-    - DistractView : display a distraction task
 """
 import tkinter as tk
 from tkinter import filedialog
 from PIL import Image, ImageTk
+
+
+class TrueFalseView:
+    """
+    A class which display id view
+    """
+
+    def __init__(self, params, evaluation, title="MakeMeLaught", bg="#FFFFFF", sizex=400, sizey=400):
+        self.window = tk.Tk()
+        self.par = params
+        self.ev = evaluation
+        self.title = title
+        self.background = bg
+        self.size_x = sizex
+        self.size_y = sizey
+
+    def create(self):
+        self.window.wm_title(self.title)
+        self.window.config(background=self.background, height=self.size_y)
+        self.window.attributes("-topmost", True)
+        self.lbl = tk.Label(master=self.window, text="La vidéo était-elle drôle ?")
+        self.btn_funny = tk.Button(text="Oui", command=self.cmd_funny)
+        self.btn_notfunny = tk.Button(text="Non", command=self.cmd_notfunny)
+        self.lbl.pack()
+        self.btn_funny.pack()
+        self.btn_notfunny.pack()
+
+    def cmd_funny(self):
+        self.ev.funny = True
+        self.close()
+
+    def cmd_notfunny(self):
+        self.ev.funny = False
+        self.close()
+
+    def show(self):
+        self.window.mainloop()
+
+    def close(self):
+        self.window.quit()
+        self.window.destroy()
+
+
+class IdView:
+    """
+    A class which display id view
+    """
+
+    def __init__(self, params, title="MakeMeLaught", bg="#FFFFFF", sizex=400, sizey=400):
+        self.window = tk.Tk()
+        self.par = params
+        self.title = title
+        self.background = bg
+        self.size_x = sizex
+        self.size_y = sizey
+
+    def create(self):
+        self.window.wm_title(self.title)
+        self.window.config(background=self.background)
+        self.window.attributes("-topmost", True)
+        self.entry_id = tk.Entry()
+        self.lbl = tk.Label(master=self.window, text="User ID :")
+        self.btn_go = tk.Button(text="Valider", command=self.cmd_launch)
+        self.lbl.pack()
+        self.entry_id.pack()
+        self.btn_go.pack()
+
+    def cmd_launch(self):
+        self.par.set_user(self.entry_id.get())
+        self.close()
+
+    def show(self):
+        self.window.mainloop()
+
+    def close(self):
+        self.window.quit()
+        self.window.destroy()
 
 
 class EvalView:
@@ -17,7 +94,7 @@ class EvalView:
     A class which display evaluation tools
     """
 
-    def __init__(self, video, params, evaluator, title="MakeMeLaught", bg="#FFFFFF", sizex=400, sizey=100):
+    def __init__(self, video, params, evaluation, title="MakeMeLaught", bg="#FFFFFF", sizex=400, sizey=100):
         self.window = tk.Tk()
         self.par = params
         self.title = title
@@ -25,7 +102,7 @@ class EvalView:
         self.size_x = sizex
         self.size_y = sizey
         self.video = video
-        self.ev = evaluator
+        self.ev = evaluation
 
     def create(self):
         self.window.wm_title(self.title)
@@ -59,8 +136,10 @@ class EvalView:
         self.window.attributes("-topmost", True)
 
     def cmd_eval(self):
-        evaluation = [self.par.user, self.video, str(self.slider.get())]
-        self.ev.add(evaluation)
+        self.ev.user = self.par.user
+        self.ev.video = self.video
+        self.ev.grade = self.slider.get()
+        self.ev.add()
         if self.par.env != "prod":
             print("evaluation saved")
         self.close()
@@ -93,8 +172,8 @@ class RecapView:
         self.window.attributes("-topmost", True)
         for i in range(len(self.ev.evaluations)):
             e = self.ev.evaluations[i]
-            lbl_avi = tk.Label(master=self.window, text=e[1], bg='#FFFFFF', width=25)
-            lbl_grade = tk.Label(master=self.window, text=e[2], bg='#FFFFFF', width=25)
+            lbl_avi = tk.Label(master=self.window, text=e.video, bg='#FFFFFF', width=25)
+            lbl_grade = tk.Label(master=self.window, text=e.grade, bg='#FFFFFF', width=25)
             lbl_avi.grid(row=i, column=0)
             lbl_grade.grid(row=i, column=1)
         btn_close = tk.Button(master=self.window, text="Close", command=self.cmd_recap, width=50)
@@ -139,35 +218,6 @@ class ChooseMediaPlayerView:
 
     def show(self):
         self.create()
-        self.window.mainloop()
-
-    def close(self):
-        self.window.quit()
-        self.window.destroy()
-
-
-class DistractView:
-    """
-    A class which display distraction task
-    """
-
-    def __init__(self, params, title="MakeMeLaught", bg="#FFFFFF", sizex=400, sizey=400):
-        self.window = tk.Tk()
-        self.par = params
-        self.title = title
-        self.background = bg
-        self.size_x = sizex
-        self.size_y = sizey
-
-    def create(self):
-        self.window.wm_title(self.title)
-        self.window.config(background=self.background)
-        self.window.attributes("-topmost", True)
-
-    def cmd_task(self):
-        self.close()
-
-    def show(self):
         self.window.mainloop()
 
     def close(self):
