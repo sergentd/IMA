@@ -24,4 +24,23 @@ for f in sorted(os.listdir("evals")):
             by_vid[b[1]]["funny"] += 1
         else:
             by_vid[b[1]]["notFunny"] += 1
+
 pprint(by_vid)
+
+funny = []
+not_funny = []
+
+for key in sorted(by_vid.keys()):
+    funny.append(by_vid[key]["funny"])
+    not_funny.append(by_vid[key]["notFunny"])
+
+labels = sorted(by_vid.keys())
+indexes = np.arange(len(labels))
+bar_width = 0.75
+plt.xticks(indexes + bar_width / 2, labels)
+plt.style.use('seaborn-deep')
+data = np.vstack([funny, not_funny]).T
+bins = np.linspace(0, 19, 20)
+plt.hist(data, bins, alpha=0.7, label=['funny', 'not_funny'])
+plt.legend(loc='upper right')
+# plt.show()
