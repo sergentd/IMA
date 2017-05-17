@@ -49,7 +49,7 @@ def get_data_vid(source, target):
     dict_matrix = dd(lambda: dd(list))
     for path_id_usr in os.listdir(source):
         for vid_yt in os.listdir(source + "/" + path_id_usr):
-            if vid_yt[-3:] == "avi":
+            if vid_yt[-3:] == "avi" or vid_yt[-3:] == "mp4":
                 ref_vid = vid_yt[:-4]
                 if ref_vid + ".data" not in os.listdir(source + "/" + path_id_usr):
                     useOpenface(source + "/" + path_id_usr, vid_yt, ref_vid)
