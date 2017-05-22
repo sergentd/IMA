@@ -48,7 +48,7 @@ def get_data_vid(source, target):
     max_time = 0
     dict_matrix = dd(lambda: dd(list))
     for path_id_usr in os.listdir(source):
-        for vid_yt in os.listdir(source + "/" + path_id_usr):
+        for vid_yt in sorted(os.listdir(source + "/" + path_id_usr)):
             if vid_yt[-3:] == "avi" or vid_yt[-3:] == "mp4":
                 ref_vid = vid_yt[:-4]
                 if ref_vid + ".data" not in os.listdir(source + "/" + path_id_usr):
@@ -92,6 +92,7 @@ def resize(dict_matrix, target, max_time):
             dict_matrix[path_id_usr][ref_vid] = interpolation(
                 dict_matrix[path_id_usr][ref_vid], max_time)
             dataframe = dict_matrix[path_id_usr][ref_vid]
+            dataframe = dataframe.drop('Unnamed: 0', axis=1)
             os.system("mkdir " + target + "/" + path_id_usr)
             os.system("touch " + target + "/" +
                       path_id_usr + "/" + ref_vid + ".mt")
