@@ -8,6 +8,7 @@ import pandas as pd
 # import matplotlib.pyplot as plt
 import numpy as np
 from pprint import pprint
+from copy import copy
 
 
 def _get_labels():
@@ -20,15 +21,15 @@ def _get_labels():
         for line in dataframe.values:
             grade_usr_vid[line[0]][line[1][:-4]] = line[2]
             funny_usr_vid[line[0]][line[1][:-4]] = line[3]
-    pprint(funny_usr_vid)
+    # pprint(funny_usr_vid)
     return grade_usr_vid, funny_usr_vid
 
 
-def mt_to_vec(vec):
-    pass
+def mt_to_vec(mt):
+    return [j for i in mt for j in i]
 
 
-def _get_vectors():
+def _get_matrix():
     mt_usr_vid = dd(lambda: dd(pd.DataFrame))
     path = "../data/au_matrix/resize/"
     for usr in sorted(os.listdir(path)):
@@ -36,11 +37,48 @@ def _get_vectors():
             with open(path + usr + "/" + mt) as stream:
                 dataframe = pd.read_csv(stream)
             mt_usr_vid[usr][mt[:-3]] = dataframe
-    pprint(mt_usr_vid["e01"]["02"])
+    return mt_usr_vid
+
+
+def combine_datas():
+    all_usr_vid = dd(lambda: dd(dict))
+    all_vid_usr = dd(lambda: dd(dict))
+    mt_usr_vid = _get_matrix()
+    grade_usr_vid, funny_usr_vid = _get_labels()
+    for usr in sorted(mt_usr_vid):
+        for vid in sorted(mt_usr_vid[usr]):
+            created = {
+                "funny": funny_usr_vid[usr][vid],
+                "grade": grade_usr_vid[usr][vid],
+                "matrix": mt_usr_vid[usr][vid],
+                "vec": np.array(mt_to_vec(mt_usr_vid[usr][vid].as_matrix()))
+            }
+            all_usr_vid[usr][vid] = created
+            all_vid_usr[vid][usr] = created
+    return all_usr_vid, all_vid_usr
+
+
+def by_X(combine):
+    one_X_test = dd(dict)
+    for X in combine:
+        copy_combine = copy(combine)
+        copy_combine.pop(X)
+        one_X_test[X] = {
+            "test": combine[X],
+            "train": copy_combine
+        }
+    return one_X_test
 
 
 def main():
-    _get_vectors()
+    usr_vid, vid_usr = combine_datas()
+    by_usr = by_X(usr_vid)
+    by_vid = by_X(vid_usr)
+    print(sorted(by_usr["e02"]["train"].keys()))
+    print(sorted(by_usr["e02"]["test"].keys()))
+    print()
+    print(sorted(by_vid["02"]["train"].keys()))
+    print(sorted(by_vid["02"]["test"].keys()))
 
 
 if __name__ == '__main__':
