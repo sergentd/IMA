@@ -75,10 +75,10 @@ def main():
     by_usr = by_X(usr_vid)
     by_vid = by_X(vid_usr)
     print(sorted(by_usr["e02"]["train"].keys()))
-    print(sorted(by_usr["e02"]["test"].keys()))
+    print(len(by_usr["e02"]["test"]["vec"]))
     print()
     print(sorted(by_vid["02"]["train"].keys()))
-    print(sorted(by_vid["02"]["test"].keys()))
+    print(len(by_vid["02"]["test"]["vec"]))
 
 
 if __name__ == '__main__':
