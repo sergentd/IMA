@@ -41,3 +41,7 @@ def center(window):
     # set the dimensions of the screen
     # and where it is placed
     window.geometry('%dx%d+%d+%d' % (w, h, x, y))
+
+
+def get_filename(file):
+    return splitext(basename(file))[0]

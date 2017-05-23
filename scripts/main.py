@@ -7,6 +7,7 @@ from media.evaluator import Evaluator, Evaluation
 from media.params import Params
 from media.player import Player
 from media.recorder import Recorder
+from predictor import Predictor
 
 if __name__ == "__main__":
 
@@ -31,6 +32,10 @@ if __name__ == "__main__":
         main_view = IdView(par)
         main_view.create()
         main_view.show()
+
+        # predictor
+        predic = Predictor(params=par)
+        predic.launch()
 
         # user directory
         usr_dir = par.record_path + par.user + '/'
