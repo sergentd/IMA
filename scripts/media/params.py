@@ -14,6 +14,7 @@ class Params:
         self.video_path = "../data/vid_show/"  # video to show
         self.record_path = "../data/vid_usr/"  # face record while showing videos
         self.eval_path = "../data/evals/"  # evaluations of videos
+        self.au_path = "../data/au_matrix/usr/"  # openface matrix
         if platform.system() == "Windows":
             self.media_player_path = "C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe"
         else:
