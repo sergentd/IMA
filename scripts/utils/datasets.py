@@ -93,8 +93,6 @@ def list_features(thisdict, lvou1, trainortest, lvou2, value):
     return list_feat
 
 
-def yolo():
-    print("yolo")
 
 
 def main():
