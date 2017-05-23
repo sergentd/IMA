@@ -64,7 +64,7 @@ def get_data_vid(source, target):
                 os.system("touch " + target + "/" +
                           path_id_usr + "/" + ref_vid + ".mt")
                 with open(target + "/" + path_id_usr + "/" + ref_vid + ".mt", "w") as myfile:
-                    dataframe.to_csv(myfile)
+                    dataframe.to_csv(myfile, mode='w', index=False)
                 if dataframe.shape[0] > max_time:
                     max_time = dataframe.shape[0]
     return dict_matrix, max_time
@@ -92,12 +92,11 @@ def resize(dict_matrix, target, max_time):
             dict_matrix[path_id_usr][ref_vid] = interpolation(
                 dict_matrix[path_id_usr][ref_vid], max_time)
             dataframe = dict_matrix[path_id_usr][ref_vid]
-            dataframe = dataframe.drop('Unnamed: 0', axis=1)
             os.system("mkdir " + target + "/" + path_id_usr)
             os.system("touch " + target + "/" +
                       path_id_usr + "/" + ref_vid + ".mt")
             with open(target + "/" + path_id_usr + "/" + ref_vid + ".mt", "w") as myfile:
-                dataframe.to_csv(myfile)
+                dataframe.to_csv(myfile, mode='w', index=False)
     return dict_matrix
 
 

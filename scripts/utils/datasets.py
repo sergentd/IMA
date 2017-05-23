@@ -36,8 +36,7 @@ def _get_vectors():
             with open(path + usr + "/" + mt) as stream:
                 dataframe = pd.read_csv(stream)
             mt_usr_vid[usr][mt[:-3]] = dataframe
-    pprint(mt_usr_vid["e01"]["02"].drop(
-        'Unnamed: 0', axis=1))
+    pprint(mt_usr_vid["e01"]["02"])
 
 
 def main():
