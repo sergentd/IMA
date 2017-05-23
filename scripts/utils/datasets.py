@@ -41,6 +41,7 @@ def _get_matrix():
 
 
 def combine_datas():
+    lusr, lvid = set(), set()
     all_usr_vid = dd(lambda: dd(dict))
     all_vid_usr = dd(lambda: dd(dict))
     mt_usr_vid = _get_matrix()
@@ -50,12 +51,14 @@ def combine_datas():
             created = {
                 "funny": funny_usr_vid[usr][vid],
                 "grade": grade_usr_vid[usr][vid],
-                "matrix": mt_usr_vid[usr][vid],
+                # "matrix": mt_usr_vid[usr][vid],
                 "vec": np.array(mt_to_vec(mt_usr_vid[usr][vid].as_matrix()))
             }
             all_usr_vid[usr][vid] = created
             all_vid_usr[vid][usr] = created
-    return all_usr_vid, all_vid_usr
+            lusr.add(usr)
+            lvid.add(vid)
+    return all_usr_vid, all_vid_usr, sorted(list(lusr)), sorted(list(lvid))
 
 
 def by_X(combine):
@@ -70,15 +73,45 @@ def by_X(combine):
     return one_X_test
 
 
+def usr_specific(combine, lvid, nbvid_test):
+    all_usr_specific_vid = dd(lambda: dd(lambda: dd(dict)))
+    lvid_test, lvid_train = lvid[:nbvid_test], lvid[nbvid_test:]
+    for usr in combine:
+        for vid in lvid_test:
+            all_usr_specific_vid[usr]['test'][vid] = combine[usr][vid]
+        for vid in lvid_train:
+            all_usr_specific_vid[usr]['train'][vid] = combine[usr][vid]
+    return all_usr_specific_vid
+
+
+def list_features(thisdict, lvou1, trainortest, lvou2, value):
+    list_feat = []
+    for vou1 in sorted(lvou1):
+        for vou2 in sorted(lvou2):
+            if vou2 in thisdict[vou1][trainortest]:
+                list_feat.append(thisdict[vou1][trainortest][vou2][value])
+    return list_feat
+
+
+def yolo():
+    print("yolo")
+
+
 def main():
-    usr_vid, vid_usr = combine_datas()
+    usr_vid, vid_usr, lusr, lvid = combine_datas()
     by_usr = by_X(usr_vid)
-    by_vid = by_X(vid_usr)
-    print(sorted(by_usr["e02"]["train"].keys()))
-    print(len(by_usr["e02"]["test"]["vec"]))
-    print()
-    print(sorted(by_vid["02"]["train"].keys()))
-    print(len(by_vid["02"]["test"]["vec"]))
+    a = usr_specific(usr_vid, lvid, 10)
+    b = list_features(a, ["e02"], "test", lvid, "vec")
+    pprint(b)
+    # by_vid = by_X(vid_usr)
+    # print(sorted(by_usr["e02"]["train"].keys()))
+    # print(len(by_usr["e02"]["test"]["02"]["vec"]))
+    # print()
+    # print(sorted(by_vid["02"]["train"].keys()))
+    # print(len(by_vid["03"]["test"]["e02"]["vec"]))
+    # a = usr_specific(usr_vid, lvid, 10)
+    # print(a["e02"]["test"]["07"])
+    # print(len(a["e02"]["train"].keys()))
 
 
 if __name__ == '__main__':
