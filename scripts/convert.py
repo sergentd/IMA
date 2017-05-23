@@ -95,7 +95,8 @@ def resize(dict_matrix, target, max_time):
             os.system("mkdir " + target + "/" + path_id_usr)
             os.system("touch " + target + "/" +
                       path_id_usr + "/" + ref_vid + ".mt")
-            with open(target + "/" + path_id_usr + "/" + ref_vid + ".mt", "w") as myfile:
+            mtpath = target + "/" + path_id_usr + "/" + ref_vid + ".mt"
+            with open(mtpath, "w") as myfile:
                 dataframe.to_csv(myfile, mode='w', index=False)
     return dict_matrix
 
