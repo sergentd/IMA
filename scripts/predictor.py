@@ -19,10 +19,11 @@ class Predictor:
             csv_path = self.au_dir + m
             predictions[video_name] = [self.analyze(csv_path, labels[video_name], video_name), labels[video_name]]
 
-        for p in predictions:
-            print(p + str(predictions[p]))
+        # for p in predictions:
+        #     print(p + str(predictions[p]))
 
-        self.scoring(predictions)
+        truePos, trueNeg, falsePos, falseNeg = self.scoring(predictions)
+        return {'tp':truePos, 'tn':trueNeg, 'fp':falsePos, 'fn':falseNeg}
 
     def get_matrix(self):
         return list(self.au_dir)
@@ -65,33 +66,54 @@ class Predictor:
                 return 'False'
 
     def scoring(self, predictions):
-        truePos = 0; trueNeg = 0; falsePos = 0; falseNeg = 0
+        true_positif = 0; true_negatif = 0; false_positif = 0; false_negatif = 0
         for p in predictions:
-            if predictions[p][0] == 'True':  # Prediction = TRUE
-                if predictions[p][1] == 'True':  # True label = TRUE
-                    truePos += 1
-                else:  # True label = FALSE
-                    falsePos += 1
-            else:  #Prediction = FALSE
-                if predictions[p][1] == 'True':  # True label = TRUE
-                    falseNeg += 1
-                else:  # True label = FALSE
-                    trueNeg += 1
-        print("P : TRUE\t|\tT : TRUE\t" + str(truePos))
-        print("P : TRUE\t|\tT : FALSE\t" + str(falsePos))
-        print("P : FALSE\t|\tT : FALSE\t" + str(trueNeg))
-        print("P : FALSE\t|\tT : TRUE\t" + str(falseNeg))
-
+            # Prediction = TRUE
+            if predictions[p][0] == 'True':
+                # True label = TRUE
+                if predictions[p][1] == 'True':
+                    true_positif += 1
+                # True label = FALSE
+                else:
+                    false_positif += 1
+            # Prediction = FALSE
+            else:
+                # True label = TRUE
+                if predictions[p][1] == 'True':
+                    false_negatif += 1
+                # True label = FALSE
+                else:
+                    true_negatif += 1
+        # print("P : TRUE\t|\tT : TRUE\t" + str(true_positif))
+        # print("P : TRUE\t|\tT : FALSE\t" + str(false_positif))
+        # print("P : FALSE\t|\tT : FALSE\t" + str(true_negatif))
+        # print("P : FALSE\t|\tT : TRUE\t" + str(false_negatif))
+        return true_positif, true_negatif, false_positif, false_negatif
 
 
 if __name__ == "__main__":
     par = Params(env="dev")
 
     # user id to evaluate
-    main_view = IdView(par)
-    main_view.create()
-    main_view.show()
+    # main_view = IdView(par)
+    # main_view.create()
+    # main_view.show()
 
-    # predictor
-    predic = Predictor(params=par)
-    predic.launch()
+    # list users
+    evals = list(par.eval_path)
+    list_users = []
+    preds = {'tp': 0, 'tn': 0, 'fp': 0, 'fn': 0}
+    for e in evals:
+        list_users.append(get_filename(e))
+
+    for user in list_users:
+        par.set_user(user)
+        # predictor
+        predic = Predictor(params=par)
+        results = predic.launch()
+        preds['tp'] += results['tp']
+        preds['tn'] += results['tn']
+        preds['fp'] += results['fp']
+        preds['fn'] += results['fn']
+    print(preds)
+    print((preds['tp'] + preds['tn'])*100 / (preds['tp'] + preds['tn'] + preds['fp'] + preds['fn']))
