@@ -12,6 +12,15 @@ import utils.datasets as ds
 from pprint import pprint
 
 
+def create_nb_model(vecs_train, labels_train):
+    return GaussianNB().fit(vecs_train, labels_train)
+
+
+def nb_predict(nb_model, vecs_test, labels_test):
+    return [(nb_model.predict([x])[0], y) for x, y in zip(
+        vecs_test, labels_test)]
+
+
 def main():
     usr_vid, vid_usr, lusr, lvid = ds.combine_datas()
     del vid_usr
