@@ -17,6 +17,7 @@ def main():
             test_system, [tested_usr], "train", lvid, "vec")
         vecs_test = ds.list_features(
             test_system, [tested_usr], "test", lvid, "vec")
+        # print(vecs_train)
         labels_test_funny = ds.list_features(
             test_system, [tested_usr], "test", lvid, "funny")
         labels_train_funny = ds.list_features(
