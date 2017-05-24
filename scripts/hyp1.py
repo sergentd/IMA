@@ -10,21 +10,24 @@ def main():
     all_usr_grade = []
 
     usr_vid, vid_usr, lusr, lvid = ds.combine_datas()
-    del vid_usr
-    test_system = ds.usr_specific(usr_vid, lvid, 10)
-    for tested_usr in lusr:
-        vecs_train = ds.list_features(
-            test_system, [tested_usr], "train", lvid, "vec")
+    del vid_usr, lusr
+    hyp1 = ds.by_X(usr_vid)
+    for usr in sorted(hyp1):
+        list_uv = hyp1[usr]["keys"]
+
         vecs_test = ds.list_features(
-            test_system, [tested_usr], "test", lvid, "vec")
+            hyp1, [usr], "test", lvid, "vec")
         labels_test_funny = ds.list_features(
-            test_system, [tested_usr], "test", lvid, "funny")
-        labels_train_funny = ds.list_features(
-            test_system, [tested_usr], "train", lvid, "funny")
-        labels_train_grade = ds.list_features(
-            test_system, [tested_usr], "train", lvid, "grade")
+            hyp1, [usr], "test", lvid, "funny")
         labels_test_grade = ds.list_features(
-            test_system, [tested_usr], "test", lvid, "grade")
+            hyp1, [usr], "test", lvid, "grade")
+
+        vecs_train = ds.list_features(
+            hyp1, [usr], "train", list_uv, "vec")
+        labels_train_funny = ds.list_features(
+            hyp1, [usr], "train", list_uv, "funny")
+        labels_train_grade = ds.list_features(
+            hyp1, [usr], "train", list_uv, "grade")
 
         model_funny = nb.create_nb_model(vecs_train, labels_train_funny)
         pred_funny = nb.nb_predict(model_funny, vecs_test, labels_test_funny)
@@ -32,7 +35,7 @@ def main():
         model_grade = nb.create_nb_model(vecs_train, labels_train_grade)
         pred_grade = nb.nb_predict(model_grade, vecs_test, labels_test_grade)
 
-        str0 += "\n".join(["", tested_usr, ms.all_mesure_funny(pred_funny),
+        str0 += "\n".join(["", usr, ms.all_mesure_funny(pred_funny),
                            ms.all_mesure_grade(pred_grade)])
         all_usr_funny.extend(pred_funny)
         all_usr_grade.extend(pred_grade)
