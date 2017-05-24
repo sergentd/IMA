@@ -4,7 +4,7 @@ import platform
 
 class Params:
     """
-    A simple class to store application parameters
+    A simple class to store application parameters and paths
     @Djavan Sergent
     """
     def __init__(self, env="dev"):
