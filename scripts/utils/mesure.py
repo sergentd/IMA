@@ -63,7 +63,7 @@ def all_mesure_funny(label_pred):
 def main():
     label_pred = [[2, 3], [4, 10], [1, 2], [3, 4]]
 
-    #a = all_mesure_funny(label_pred)
+    # a = all_mesure_funny(label_pred)
     a = all_mesure_grade(label_pred)
     print(a)
 
