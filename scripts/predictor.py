@@ -38,25 +38,23 @@ class Predictor:
 
     # Dummy prediction
     def analyze(self, mfile, label, name):
-        au5 = []; au5v = []; au6 = []; au6v = []
-        au7 = []; au7v = []; au12 = []; au12v = []
+        au6 = []; au6v = []
+        au12 = []; au12v = []
         match = 0
 
         with open(mfile, newline='') as csvfile:
             matrix_reader = csv.DictReader(csvfile)
             cpt = 0
             for line in matrix_reader:
-                au5.append(line["AU05_c"]); au5v.append(line["AU05_r"])
                 au6.append(line["AU06_c"]); au6v.append(line["AU06_r"])
-                au7.append(line["AU07_c"]); au7v.append(line["AU07_r"])
                 au12.append(line["AU12_c"]); au12v.append(line["AU12_r"])
                 if (line["AU06_c"] == str(1)) and (line["AU12_c"] == str(1)):
-                    match +=1
+                    match += 1
                 cpt += 1
 
             # Plot
-            au = [au5, au6, au7, au12]
-            auv = [au5v, au6v, au7v, au12v]
+            au = [au6, au12]
+            auv = [au6v, au12v]
             # plot(name, label, au, auv)
 
             # Prediction
@@ -93,11 +91,6 @@ class Predictor:
 
 if __name__ == "__main__":
     par = Params(env="dev")
-
-    # user id to evaluate
-    # main_view = IdView(par)
-    # main_view.create()
-    # main_view.show()
 
     # list users
     evals = list(par.eval_path)
