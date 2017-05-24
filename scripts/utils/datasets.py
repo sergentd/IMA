@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 """
 """
-# import argparse
 import os
 from collections import defaultdict as dd
 import pandas as pd
-# import matplotlib.pyplot as plt
 import numpy as np
-from pprint import pprint
 from copy import copy
 
 
@@ -98,35 +95,9 @@ def list_features(thisdict, lvou1, trainortest, lvou2, value, by=False):
     return list_feat
 
 
-def yolo():
-    print("yolo")
-
-
 def main():
     usr_vid, vid_usr, lusr, lvid = combine_datas()
     by_usr = by_X(usr_vid)
-    print(by_usr.keys())
-    print()
-    print(by_usr['e05'].keys())
-    print(by_usr['e05']['train'].keys())
-    print(by_usr['e05']['train']['e07'].keys())
-    print()
-    # print(by_usr.keys())
-    # print(by_usr['e05']['test'].keys())
-    # print(by_usr['e05']['train']['e07'].keys())
-    # print(by_usr['e05']['train']['e07']['S9C28Bsr'].keys())
-    # a = usr_specific(usr_vid, lvid, 10)
-    # b = list_features(by_usr, lusr, "train", lvid, "vec")
-    # pprint(b)
-    # by_vid = by_X(vid_usr)
-    # print(sorted(by_usr["e02"]["train"].keys()))
-    # print(by_usr["e02"]["test"]["02"]["vec"])
-    # print()
-    # print(sorted(by_vid["02"]["train"].keys()))
-    # print(len(by_vid["03"]["test"]["e02"]["vec"]))
-    # a = usr_specific(usr_vid, lvid, 10)
-    # print(a["e02"]["test"]["07"])
-    # print(len(a["e02"]["train"].keys()))
 
 
 if __name__ == '__main__':
