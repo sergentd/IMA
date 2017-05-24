@@ -1,0 +1,470 @@
+
+d01
+C:Predicted  False  True  All
+R:Actual                     
+False            5     1    6
+True             0     4    4
+All              5     5   10
+Accuracy:	90%
+Fscore:		89%
+Precision:	80%
+Recall:		100%
+
+C:Predicted  5  6  All
+R:Actual              
+0            1  0    1
+3            2  0    2
+4            1  0    1
+5            0  1    1
+6            1  2    3
+7            0  2    2
+All          5  5   10
+Error percent:	14%
+
+d02
+C:Predicted  True  All
+R:Actual              
+False           3    3
+True            7    7
+All            10   10
+Accuracy:	70%
+Fscore:		82%
+Precision:	70%
+Recall:		100%
+
+C:Predicted  3  4  5  6  All
+R:Actual                    
+0            0  1  1  0    2
+1            1  0  0  0    1
+2            0  0  0  1    1
+3            0  0  0  2    2
+4            0  0  1  1    2
+5            0  0  0  1    1
+7            0  0  1  0    1
+All          1  1  3  5   10
+Error percent:	27%
+
+e01
+C:Predicted  True  All
+R:Actual              
+False           4    4
+True            6    6
+All            10   10
+Accuracy:	60%
+Fscore:		75%
+Precision:	60%
+Recall:		100%
+
+C:Predicted  0  2  4  All
+R:Actual                 
+0            2  0  0    2
+1            1  0  1    2
+3            0  4  0    4
+4            0  0  1    1
+5            0  1  0    1
+All          3  5  2   10
+Error percent:	11%
+
+e02
+C:Predicted  False  True  All
+R:Actual                     
+False            6     1    7
+True             0     3    3
+All              6     4   10
+Accuracy:	90%
+Fscore:		86%
+Precision:	75%
+Recall:		100%
+
+C:Predicted  0  1  6  All
+R:Actual                 
+0            2  3  0    5
+1            2  0  0    2
+4            0  0  1    1
+7            0  0  2    2
+All          4  3  3   10
+Error percent:	9%
+
+e03
+C:Predicted  False  True  All
+R:Actual                     
+False            7     1    8
+True             0     2    2
+All              7     3   10
+Accuracy:	90%
+Fscore:		80%
+Precision:	67%
+Recall:		100%
+
+C:Predicted  0  4  9  All
+R:Actual                 
+0            2  1  0    3
+1            1  0  0    1
+2            1  0  0    1
+3            0  1  1    2
+5            0  1  0    1
+7            0  0  2    2
+All          4  3  3   10
+Error percent:	19%
+
+e04
+C:Predicted  False  True  All
+R:Actual                     
+False            2     1    3
+True             0     7    7
+All              2     8   10
+Accuracy:	90%
+Fscore:		93%
+Precision:	88%
+Recall:		100%
+
+C:Predicted  0  2  7  10  All
+R:Actual                     
+0            2  0  0   0    2
+3            0  0  2   1    3
+4            0  0  1   0    1
+5            0  0  0   1    1
+6            0  0  1   0    1
+7            0  1  1   0    2
+All          2  1  5   2   10
+Error percent:	29%
+
+e05
+C:Predicted  False  True  All
+R:Actual                     
+False            7     0    7
+True             2     1    3
+All              9     1   10
+Accuracy:	80%
+Fscore:		50%
+Precision:	100%
+Recall:		33%
+
+C:Predicted  0  2  7  All
+R:Actual                 
+0            0  1  0    1
+1            3  1  0    4
+2            1  1  0    2
+6            0  1  0    1
+7            1  0  0    1
+8            0  0  1    1
+All          5  4  1   10
+Error percent:	20%
+
+e06
+C:Predicted  False  True  All
+R:Actual                     
+False            7     0    7
+True             2     1    3
+All              9     1   10
+Accuracy:	80%
+Fscore:		50%
+Precision:	100%
+Recall:		33%
+
+C:Predicted  0  3  All
+R:Actual              
+0            6  0    6
+3            1  0    1
+5            1  1    2
+7            0  1    1
+All          8  2   10
+Error percent:	14%
+
+e07
+C:Predicted  False  True  All
+R:Actual                     
+False            4     0    4
+True             1     5    6
+All              5     5   10
+Accuracy:	90%
+Fscore:		91%
+Precision:	100%
+Recall:		83%
+
+C:Predicted  0  2  3  8  All
+R:Actual                    
+0            3  0  0  0    3
+1            1  0  0  0    1
+2            1  1  1  0    3
+3            0  0  0  1    1
+6            0  0  1  0    1
+7            0  0  1  0    1
+All          5  1  3  1   10
+Error percent:	16%
+
+e08
+C:Predicted  False  True  All
+R:Actual                     
+False            4     1    5
+True             1     4    5
+All              5     5   10
+Accuracy:	80%
+Fscore:		80%
+Precision:	80%
+Recall:		80%
+
+C:Predicted  5  10  All
+R:Actual               
+0            3   0    3
+3            2   0    2
+5            0   1    1
+6            1   0    1
+7            1   0    1
+9            0   1    1
+10           0   1    1
+All          7   3   10
+Error percent:	28%
+
+e09
+C:Predicted  False  True  All
+R:Actual                     
+False            7     1    8
+True             0     2    2
+All              7     3   10
+Accuracy:	90%
+Fscore:		80%
+Precision:	67%
+Recall:		100%
+
+C:Predicted  0  5  All
+R:Actual              
+0            6  0    6
+1            1  1    2
+6            0  1    1
+8            0  1    1
+All          7  3   10
+Error percent:	9%
+
+e10
+C:Predicted  False  True  All
+R:Actual                     
+False            5     1    6
+True             0     4    4
+All              5     5   10
+Accuracy:	90%
+Fscore:		89%
+Precision:	80%
+Recall:		100%
+
+C:Predicted  3  5  6  All
+R:Actual                 
+1            1  0  0    1
+2            2  0  0    2
+3            2  0  0    2
+4            0  1  0    1
+6            0  2  0    2
+8            0  0  1    1
+9            0  1  0    1
+All          5  4  1   10
+Error percent:	13%
+
+e11
+C:Predicted  False  True  All
+R:Actual                     
+False            2     3    5
+True             0     5    5
+All              2     8   10
+Accuracy:	70%
+Fscore:		77%
+Precision:	62%
+Recall:		100%
+
+C:Predicted  1  7  All
+R:Actual              
+0            2  0    2
+1            1  0    1
+2            1  0    1
+3            1  0    1
+5            0  1    1
+6            0  2    2
+8            0  1    1
+9            0  1    1
+All          5  5   10
+Error percent:	12%
+
+e12
+C:Predicted  False  True  All
+R:Actual                     
+False            3     3    6
+True             1     3    4
+All              4     6   10
+Accuracy:	60%
+Fscore:		60%
+Precision:	50%
+Recall:		75%
+
+C:Predicted  0  1  7  All
+R:Actual                 
+0            1  2  0    3
+1            0  1  0    1
+2            0  2  0    2
+3            0  1  0    1
+4            0  2  0    2
+9            0  0  1    1
+All          1  8  1   10
+Error percent:	14%
+
+e13
+C:Predicted  False  True  All
+R:Actual                     
+False            1     2    3
+True             0     7    7
+All              1     9   10
+Accuracy:	80%
+Fscore:		88%
+Precision:	78%
+Recall:		100%
+
+C:Predicted  0  4  6  8  9  All
+R:Actual                       
+0            1  1  0  0  0    2
+1            0  0  1  0  0    1
+6            0  0  0  0  1    1
+7            0  0  1  0  1    2
+8            0  0  0  1  1    2
+9            0  0  0  0  1    1
+10           0  0  0  0  1    1
+All          1  1  2  1  5   10
+Error percent:	17%
+
+e14
+C:Predicted  False  True  All
+R:Actual                     
+False            5     0    5
+True             0     5    5
+All              5     5   10
+Accuracy:	100%
+Fscore:		100%
+Precision:	100%
+Recall:		100%
+
+C:Predicted  0  1  5  All
+R:Actual                 
+0            1  1  0    2
+1            0  1  0    1
+2            0  1  0    1
+3            0  0  1    1
+4            0  1  0    1
+5            0  0  1    1
+6            0  0  1    1
+7            0  0  1    1
+8            0  0  1    1
+All          1  4  5   10
+Error percent:	13%
+
+e15
+C:Predicted  True  All
+R:Actual              
+False           3    3
+True            7    7
+All            10   10
+Accuracy:	70%
+Fscore:		82%
+Precision:	70%
+Recall:		100%
+
+C:Predicted  3  7  8  All
+R:Actual                 
+2            1  1  1    3
+3            0  2  0    2
+4            0  1  0    1
+6            0  2  0    2
+8            0  0  1    1
+9            0  0  1    1
+All          1  6  3   10
+Error percent:	26%
+
+e16
+C:Predicted  False  True  All
+R:Actual                     
+False            4     0    4
+True             3     3    6
+All              7     3   10
+Accuracy:	70%
+Fscore:		67%
+Precision:	100%
+Recall:		50%
+
+C:Predicted  1  2  5  All
+R:Actual                 
+0            3  0  0    3
+2            1  0  0    1
+4            1  1  0    2
+5            2  0  1    3
+8            0  0  1    1
+All          7  1  2   10
+Error percent:	20%
+
+e17
+C:Predicted  False  True  All
+R:Actual                     
+False            2     2    4
+True             2     4    6
+All              4     6   10
+Accuracy:	60%
+Fscore:		67%
+Precision:	67%
+Recall:		67%
+
+C:Predicted  2  3  5  6  All
+R:Actual                    
+0            1  0  0  0    1
+1            0  1  0  0    1
+2            0  1  0  0    1
+4            2  1  0  0    3
+5            2  0  0  0    2
+6            0  0  1  1    2
+All          5  3  1  1   10
+Error percent:	17%
+
+e21
+C:Predicted  False  True  All
+R:Actual                     
+False            5     1    6
+True             1     3    4
+All              6     4   10
+Accuracy:	80%
+Fscore:		75%
+Precision:	75%
+Recall:		75%
+
+C:Predicted  1  2  6  7  All
+R:Actual                    
+0            1  1  0  0    2
+1            1  0  0  0    1
+2            1  0  0  0    1
+3            1  0  1  0    2
+4            0  1  0  0    1
+6            0  0  2  0    2
+7            0  0  0  1    1
+All          4  2  3  1   10
+Error percent:	11%
+
+all_usr
+C:Predicted  False  True  All
+R:Actual                     
+False           76    28  104
+True            13    83   96
+All             89   111  200
+Accuracy:	80%
+Fscore:		80%
+Precision:	75%
+Recall:		86%
+
+C:Predicted   0   1   2   3  4   5   6   7  8  9  10  All
+R:Actual                                                 
+0            26  12   3   0  3   5   0   0  0  0   0   49
+1             9   4   1   3  1   1   1   0  0  0   0   20
+2             3   6   2   5  0   0   1   1  1  0   0   19
+3             1   3   4   2  1   5   3   4  1  1   1   26
+4             0   4   4   1  1   3   2   2  0  0   0   17
+5             1   2   3   1  1   2   2   1  0  0   2   15
+6             0   0   1   1  0   7   5   5  0  1   0   20
+7             1   0   1   2  0   3   5   2  0  3   0   17
+8             0   0   0   0  0   3   1   2  2  1   0    9
+9             0   0   0   0  0   1   0   2  1  1   1    6
+10            0   0   0   0  0   0   0   0  0  1   1    2
+All          41  31  19  15  7  30  20  19  5  8   5  200
+Error percent:	17%
+
