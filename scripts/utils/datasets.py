@@ -66,10 +66,15 @@ def by_X(combine):
     for X in combine:
         copy_combine = copy(combine)
         copy_combine.pop(X)
-        one_X_test[X] = {
-            "test": combine[X],
-            "train": copy_combine
-        }
+        for_train = dd(dict)
+        for vou1 in copy_combine:
+            for vou2 in copy_combine[vou1]:
+                for_train["{}{}".format(vou1, vou2)] = copy_combine[vou1][vou2]
+
+        one_X_test[X] = {"test": combine[X],
+                         "train": for_train,
+                         "keys": for_train.keys()}
+
     return one_X_test
 
 
@@ -84,7 +89,7 @@ def usr_specific(combine, lvid, nbvid_test):
     return all_usr_specific_vid
 
 
-def list_features(thisdict, lvou1, trainortest, lvou2, value):
+def list_features(thisdict, lvou1, trainortest, lvou2, value, by=False):
     list_feat = []
     for vou1 in sorted(lvou1):
         for vou2 in sorted(lvou2):
@@ -100,12 +105,22 @@ def yolo():
 def main():
     usr_vid, vid_usr, lusr, lvid = combine_datas()
     by_usr = by_X(usr_vid)
-    a = usr_specific(usr_vid, lvid, 10)
-    b = list_features(a, ["e02"], "test", lvid, "vec")
-    pprint(b)
+    print(by_usr.keys())
+    print()
+    print(by_usr['e05'].keys())
+    print(by_usr['e05']['train'].keys())
+    print(by_usr['e05']['train']['e07'].keys())
+    print()
+    # print(by_usr.keys())
+    # print(by_usr['e05']['test'].keys())
+    # print(by_usr['e05']['train']['e07'].keys())
+    # print(by_usr['e05']['train']['e07']['S9C28Bsr'].keys())
+    # a = usr_specific(usr_vid, lvid, 10)
+    # b = list_features(by_usr, lusr, "train", lvid, "vec")
+    # pprint(b)
     # by_vid = by_X(vid_usr)
     # print(sorted(by_usr["e02"]["train"].keys()))
-    # print(len(by_usr["e02"]["test"]["02"]["vec"]))
+    # print(by_usr["e02"]["test"]["02"]["vec"])
     # print()
     # print(sorted(by_vid["02"]["train"].keys()))
     # print(len(by_vid["03"]["test"]["e02"]["vec"]))
