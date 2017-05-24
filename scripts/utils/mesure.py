@@ -5,6 +5,7 @@ import pandas as pd
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
+from sklearn.metrics import fbeta_score
 
 
 def create_dic(pred_label):
@@ -32,19 +33,26 @@ def precision(label_pred):
     y_label = [y for _, y in label_pred]
     y_pred = [y for y, _ in label_pred]
     return "Precision:\t{:.0%}".format(
-        precision_score(y_label, y_pred, average='micro'))
+        precision_score(y_label, y_pred, average='binary'))
 
 
 def recall(label_pred):
     y_label = [y for _, y in label_pred]
     y_pred = [y for y, _ in label_pred]
     return "Recall:\t\t{:.0%}".format(
-        recall_score(y_label, y_pred, average='micro'))
+        recall_score(y_label, y_pred, average='binary'))
 
 
 def error_grade(label_pred):
     return "Error percent:\t{:.0%}".format(
         sum([abs(x - y) for x, y in label_pred]) / (len(label_pred) * 10))
+
+
+def fscore(label_pred):
+    y_label = [y for _, y in label_pred]
+    y_pred = [y for y, _ in label_pred]
+    return "Fscore:\t\t{:.0%}".format(
+        fbeta_score(y_label, y_pred, average='binary', beta=1))
 
 
 def all_mesure_grade(label_pred):
@@ -56,8 +64,9 @@ def all_mesure_funny(label_pred):
     return "\n".join([
         conf_tab(label_pred),
         accuracy(label_pred),
-        # precision(label_pred),
-        # recall(label_pred),
+        fscore(label_pred),
+        precision(label_pred),
+        recall(label_pred),
         ""])
 
 
