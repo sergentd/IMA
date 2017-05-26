@@ -92,7 +92,7 @@ def list_features(thisdict, lvou1, trainortest, lvou2, value, by=False):
         for vou2 in sorted(lvou2):
             if vou2 in thisdict[vou1][trainortest]:
                 list_feat.append(thisdict[vou1][trainortest][vou2][value])
-    return list_feat
+    return np.array(list_feat)
 
 
 def main():
