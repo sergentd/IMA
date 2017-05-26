@@ -26,7 +26,7 @@ def main():
             hyp1, [usr], "train", list_uv, "vec")
         labels_train_funny = ds.list_features(
             hyp1, [usr], "train", list_uv, "funny")
-        labels_train_grade = ds.list_features(
+        labels_train_grade = ds.list_features(# import argparse
             hyp1, [usr], "train", list_uv, "grade")
 
         model_funny = nb.create_nb_model(vecs_train, labels_train_funny)
