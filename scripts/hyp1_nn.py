@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import utils.datasets as ds
-import machine_learning.naivebayes as nb
 import utils.mesure as ms
+from keras.models import Sequential
+from keras.layers import Dense, Activation
+import keras
 
 
 def main():
@@ -28,6 +30,25 @@ def main():
             hyp1, [usr], "train", list_uv, "funny")
         labels_train_grade = ds.list_features(
             hyp1, [usr], "train", list_uv, "grade")
+        print(len(vecs_train[0]))
+        model = Sequential()
+        model.add(Dense(units=64, input_dim=len(vecs_train[0])))
+        model.add(Activation('relu'))
+        model.add(Dense(units=10))
+        model.add(Activation('softmax'))
+        model.compile(loss='categorical_crossentropy',
+                      optimizer='sgd',
+                      metrics=['accuracy'])
+        model.compile(loss=keras.losses.categorical_crossentropy,
+                      optimizer=keras.optimizers.SGD(
+                          lr=0.01, momentum=0.9, nesterov=True))
+        model.train_on_batch(vecs_train, labels_train_funny)
+
+        classes = model.predict(vecs_test, batch_size=128)
+
+        print(classes)
+
+        break
 
     """
         str0 += "\n".join(["", usr, ms.all_mesure_funny(pred_funny),
