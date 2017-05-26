@@ -5,7 +5,7 @@ import numpy as np
 import tensorflow as tf
 
 
-def create_trained_nn(vecs_train, labels_train):
+def create_trained_nn(vecs_train, labels_train, epochs=50):
     input_dim = vecs_train.shape[1]
     model = Sequential()
     model.add(Dense(units=100, input_dim=input_dim))
@@ -15,7 +15,7 @@ def create_trained_nn(vecs_train, labels_train):
     model.compile(loss='sparse_categorical_crossentropy',
                   optimizer='sgd',
                   metrics=['accuracy'])
-    model.fit(vecs_train, labels_train, epochs=500, batch_size=32)
+    model.fit(vecs_train, labels_train, epochs=epochs, batch_size=32)
     return model
 
 
