@@ -1,7 +1,7 @@
 # ! /usr/bin/python3
 # @Djavan Sergent
 from random import shuffle
-from function import check_dir, list, check_vlc
+from utils.function import check_dir, list, check_vlc
 from interface.views import EvalView, RecapView, IdView, TrueFalseView
 from media.evaluator import Evaluator, Evaluation
 from media.params import Params
