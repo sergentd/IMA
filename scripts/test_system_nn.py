@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import utils.datasets as ds
-import machine_learning.naivebayes as nb
+import machine_learning.neural_network as nn
 import utils.mesure as ms
 
 
