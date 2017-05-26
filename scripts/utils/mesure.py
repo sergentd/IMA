@@ -15,66 +15,66 @@ def create_dic(pred_label):
     return dic
 
 
-def conf_tab(label_pred):
-    y_label = pd.Series([y for _, y in label_pred], name='Actual')
-    y_pred = pd.Series([y for y, _ in label_pred], name='Predicted')
+def conf_tab(pred_label):
+    y_label = pd.Series([y for _, y in pred_label], name='Actual')
+    y_pred = pd.Series([y for y, _ in pred_label], name='Predicted')
     df_confusion = pd.crosstab(y_label, y_pred, rownames=['R:Actual'], colnames=[
                                'C:Predicted'], margins=True)
     return str(df_confusion)
 
 
-def accuracy(label_pred):
-    y_label = [y for _, y in label_pred]
-    y_pred = [y for y, _ in label_pred]
+def accuracy(pred_label):
+    y_label = [y for _, y in pred_label]
+    y_pred = [y for y, _ in pred_label]
     return "Accuracy:\t{:.0%}".format(accuracy_score(y_label, y_pred))
 
 
-def precision(label_pred):
-    y_label = [y for _, y in label_pred]
-    y_pred = [y for y, _ in label_pred]
+def precision(pred_label):
+    y_label = [y for _, y in pred_label]
+    y_pred = [y for y, _ in pred_label]
     return "Precision:\t{:.0%}".format(
         precision_score(y_label, y_pred, average='binary'))
 
 
-def recall(label_pred):
-    y_label = [y for _, y in label_pred]
-    y_pred = [y for y, _ in label_pred]
+def recall(pred_label):
+    y_label = [y for _, y in pred_label]
+    y_pred = [y for y, _ in pred_label]
     return "Recall:\t\t{:.0%}".format(
         recall_score(y_label, y_pred, average='binary'))
 
 
-def error_grade(label_pred):
+def error_grade(pred_label):
     return "Error percent:\t{:.0%}".format(
-        sum([abs(x - y) for x, y in label_pred]) / (len(label_pred) * 10))
+        sum([abs(x - y) for x, y in pred_label]) / (len(pred_label) * 10))
 
 
-def fscore(label_pred):
-    y_label = [y for _, y in label_pred]
-    y_pred = [y for y, _ in label_pred]
+def fscore(pred_label):
+    y_label = [y for _, y in pred_label]
+    y_pred = [y for y, _ in pred_label]
     return "Fscore:\t\t{:.0%}".format(
         fbeta_score(y_label, y_pred, average='binary', beta=1))
 
 
-def all_mesure_grade(label_pred):
+def all_mesure_grade(pred_label):
     return "\n".join([
-        conf_tab(label_pred), error_grade(label_pred), ""])
+        conf_tab(pred_label), error_grade(pred_label), ""])
 
 
-def all_mesure_funny(label_pred):
+def all_mesure_funny(pred_label):
     return "\n".join([
-        conf_tab(label_pred),
-        accuracy(label_pred),
-        fscore(label_pred),
-        precision(label_pred),
-        recall(label_pred),
+        conf_tab(pred_label),
+        accuracy(pred_label),
+        fscore(pred_label),
+        precision(pred_label),
+        recall(pred_label),
         ""])
 
 
 def main():
-    label_pred = [[2, 3], [4, 10], [1, 2], [3, 4]]
+    pred_label = [[2, 3], [4, 10], [1, 2], [3, 4]]
 
-    # a = all_mesure_funny(label_pred)
-    a = all_mesure_grade(label_pred)
+    # a = all_mesure_funny(pred_label)
+    a = all_mesure_grade(pred_label)
     print(a)
 
 
