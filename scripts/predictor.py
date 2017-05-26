@@ -1,8 +1,7 @@
 # ! /usr/bin/python3
 # @Djavan Sergent
-from function import list, get_filename, plot
+from utils.function import list, get_filename, plot
 from params import Params
-from views import IdView
 import csv
 
 
