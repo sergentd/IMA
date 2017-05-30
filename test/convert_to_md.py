@@ -62,7 +62,7 @@ def main():
              'test_hyp1_nn.res', 'test_hyp2_nn.res', 'test_sys_nn.res']
     str0 = ""
     for file in files:
-        str0 += file[: -4] + "\n"
+        str0 += file[: -4] + "\n\n"
         str0 += get_mesure_by_X(file)
     open("all_res.md", "x").write(str0)
 
