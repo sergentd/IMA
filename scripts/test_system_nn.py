@@ -13,7 +13,7 @@ def main():
     del vid_usr
     test_system = ds.usr_specific(usr_vid, lvid, 10)
     for tested_usr in lusr:
-        vecs_train = ds.list_features(
+        vecs_train =ds.list_features(
             test_system, [tested_usr], "train", lvid, "vec")
         vecs_test = ds.list_features(
             test_system, [tested_usr], "test", lvid, "vec")
