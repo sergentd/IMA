@@ -6,6 +6,7 @@ import tensorflow as tf
 
 
 def create_trained_nn(vecs_train, labels_train, epochs=50):
+    np.random.seed(3)
     input_dim = vecs_train.shape[1]
     model = Sequential()
     model.add(Dense(units=100, input_dim=input_dim))
