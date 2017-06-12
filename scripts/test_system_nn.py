@@ -8,7 +8,6 @@ import json
 
 def get_corpus():
     usr_vid, vid_usr, lusr, lvid = ds.combine_datas()
-    del vid_usr
     test_system = ds.usr_specific(usr_vid, lvid, 10)
     corpus = {}
     for tested_usr in lusr:
@@ -22,7 +21,6 @@ def get_corpus():
             test_system, [tested_usr], "train", lvid, "funny")
         corpus[tested_usr] = [vecs_train, vecs_test,
                               labels_test_funny, labels_train_funny]
-    del test_system, usr_vid, lusr, lvid
     return corpus
 
 
