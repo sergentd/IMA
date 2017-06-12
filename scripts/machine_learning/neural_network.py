@@ -20,6 +20,11 @@ def create_trained_nn(vecs_train, labels_train, epochs=50):
     return model
 
 
+def retrain_model(model, vecs_train, labels_train, epochs=50):
+    model.fit(vecs_train, labels_train, epochs=epochs, batch_size=32)
+    return model
+
+
 def convert_output(pred):
     return [bool(p) for p in pred]
 
