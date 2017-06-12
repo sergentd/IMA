@@ -29,7 +29,7 @@ def get_corpus():
 def train_model(corpus):
     str0 = ""
     sum_by_epochs = dd(list)
-    loss_acc_by_epochs = dd(list)
+    loss_acc_by_epochs = dd(lambda: dd(list))
     for usr in sorted(corpus):
         vecs_train, vecs_test = corpus[usr][:2]
         labels_test_funny, labels_train_funny = corpus[usr][2:]
@@ -42,7 +42,7 @@ def train_model(corpus):
             model = nn.retrain_model(
                 model, vecs_train, labels_train_funny, 1)
             sum_by_epochs[epochs].extend(pred_funny)
-            loss_acc_by_epochs[epochs].extend(  # tuple(loss, acc)
+            loss_acc_by_epochs[usr][epochs].extend(  # tuple(loss, acc)
                 tuple(model.evaluate(vecs_test, labels_test_funny)))
     for epochs in sum_by_epochs:
         str0 += "\nEpochs: {}\n".format(epochs)
