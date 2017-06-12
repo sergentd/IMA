@@ -33,7 +33,7 @@ def train_model(corpus):
         vecs_train, vecs_test = corpus[usr][:2]
         labels_test_funny, labels_train_funny = corpus[usr][2:]
         model = nn.create_trained_nn(vecs_train, labels_train_funny, 1)
-        for epochs in range(1, 151):
+        for epochs in range(1, 6):
             pred_funny = nn.predict_nn(model, vecs_test, labels_test_funny)
             str0 += "\nEpochs: {}\n".format(epochs - 1)
             str0 += "\n".join(["", usr,
