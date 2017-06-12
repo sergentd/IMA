@@ -8,10 +8,10 @@ import json
 
 def get_corpus():
     usr_vid, vid_usr, lusr, lvid = ds.combine_datas()
-    del usr_vid, lvid
     hyp2 = ds.by_X(vid_usr)
     corpus = {}
     for vid in sorted(hyp2):
+        # print(vid)
         list_uv = hyp2[vid]["keys"]
         vecs_test = ds.list_features(
             hyp2, [vid], "test", lusr, "vec")
@@ -23,7 +23,6 @@ def get_corpus():
             hyp2, [vid], "train", list_uv, "funny")
         corpus[vid] = [vecs_train, vecs_test,
                        labels_test_funny, labels_train_funny]
-    del hyp2, usr_vid, lvid
     return corpus
 
 
