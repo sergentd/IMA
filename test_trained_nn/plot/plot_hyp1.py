@@ -17,17 +17,18 @@ def by_epochs(values, lossoracc=False):
         Y = [values[usr][ep][indice]
              for ep in sorted([ep for ep in values[usr]])]
         X = sorted([int(ep) for ep in values[usr]])
-        plt.text(X[i], Y[i], usr)
+        plt.text(X[0], Y[0], usr)
         plt.plot(X, Y, label=usr)
         i += 3
-    plt.legend()
-    plt.show()
+        plt.legend()
+        plt.show()
 
 
 def main():
-    with open('../loss_acc_hyp1_train.json', 'r') as stream:
+    with open('../loss_acc_hyp2_train.json', 'r') as stream:
         values = json.load(stream)
     by_epochs(values, True)
+    by_epochs(values)
 
 
 if __name__ == '__main__':
