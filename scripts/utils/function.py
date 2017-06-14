@@ -34,16 +34,16 @@ def plot(name, label, res, au, auv):
     # Plot title
     plt.suptitle(name + " > " + 'Classe : ' + label + ' | Prediction : ' + res)
     # Subplot 1 : AU presence
-    plt.subplot(211)
+    # plt.subplot(211)
     plt.ylabel("Presence")
     plt.xlabel("frame")
     for e in au:
         plt.plot(e)
     # Subplot 2 : AU intensity
-    plt.subplot(212)
-    plt.ylabel("intensity")
-    plt.xlabel("frame")
-    for e in auv:
-        plt.plot(e)
+    # plt.subplot(212)
+    # plt.ylabel("intensity")
+    # plt.xlabel("frame")
+    # for e in auv:
+    #     plt.plot(e)
 
     plt.show()

@@ -54,7 +54,7 @@ class Predictor:
         return faxp
 
 
-    # dummy prediction
+    # prediction
     def eval_facial_expression(self, mfile, grade):
         au = {'AU12_c':0}
         with open(mfile, newline='') as csvfile:
@@ -72,7 +72,7 @@ class Predictor:
         return res
 
 
-    # Dummy prediction
+    # prediction
     def analyze(self, mfile, label, name):
         au6 = []; au6v = []
         au12 = []; au12v = []
@@ -95,7 +95,7 @@ class Predictor:
         # Plot
         au = [au6, au12, au5]
         auv = [au6v, au12v, au5v]
-        #plot(name, label, res, au, auv)
+        plot(name, label, res, au, auv)
 
         # Prediction
         return res
@@ -103,20 +103,14 @@ class Predictor:
     def scoring(self, predictions):
         true_positif = 0; true_negatif = 0; false_positif = 0; false_negatif = 0
         for p in predictions:
-            # Prediction = TRUE
             if p[0] == 'True':
-                # True label = TRUE
                 if p[1] == 'True':
                     true_positif += 1
-                # True label = FALSE
                 else:
                     false_positif += 1
-            # Prediction = FALSE
             else:
-                # True label = TRUE
                 if p[1] == 'True':
                     false_negatif += 1
-                # True label = FALSE
                 else:
                     true_negatif += 1
         # print("P : TRUE\t|\tT : TRUE\t" + str(true_positif))
@@ -151,12 +145,12 @@ if __name__ == "__main__":
         par.set_user(user)
         # predictor
         predic = Predictor(params=par)
-    #     results = predic.launch()
-    #     preds['tp'] += results['tp']
-    #     preds['tn'] += results['tn']
-    #     preds['fp'] += results['fp']
-    #     preds['fn'] += results['fn']
-    # print(preds)
-    # print((preds['tp'] + preds['tn'])*100 / (preds['tp'] + preds['tn'] + preds['fp'] + preds['fn']))
+        results = predic.launch()
+        preds['tp'] += results['tp']
+        preds['tn'] += results['tn']
+        preds['fp'] += results['fp']
+        preds['fn'] += results['fn']
         results += predic.facialExp()
+    print(preds)
+    print((preds['tp'] + preds['tn']) * 100 / (preds['tp'] + preds['tn'] + preds['fp'] + preds['fn']))
     print("*** écart moyen : " , results/len((list_users)), " ***")
