@@ -1,0 +1,2340 @@
+
+Epochs: 1
+
+02
+C:Predicted  False  True  All
+R:Actual                     
+False           15     4   19
+True             0     1    1
+All             15     5   20
+Accuracy:	80%
+Fscore:		33%
+Precision:	20%
+Recall:		100%
+
+Epochs: 2
+
+02
+C:Predicted  False  True  All
+R:Actual                     
+False           14     5   19
+True             0     1    1
+All             14     6   20
+Accuracy:	75%
+Fscore:		29%
+Precision:	17%
+Recall:		100%
+
+Epochs: 3
+
+02
+C:Predicted  False  True  All
+R:Actual                     
+False           16     3   19
+True             0     1    1
+All             16     4   20
+Accuracy:	85%
+Fscore:		40%
+Precision:	25%
+Recall:		100%
+
+Epochs: 4
+
+02
+C:Predicted  False  True  All
+R:Actual                     
+False           16     3   19
+True             0     1    1
+All             16     4   20
+Accuracy:	85%
+Fscore:		40%
+Precision:	25%
+Recall:		100%
+
+Epochs: 5
+
+02
+C:Predicted  False  True  All
+R:Actual                     
+False           17     2   19
+True             0     1    1
+All             17     3   20
+Accuracy:	90%
+Fscore:		50%
+Precision:	33%
+Recall:		100%
+
+Epochs: 1
+
+03
+C:Predicted  False  All
+R:Actual               
+False           18   18
+True             2    2
+All             20   20
+Accuracy:	90%
+Fscore:		0%
+Precision:	0%
+Recall:		0%
+
+Epochs: 2
+
+03
+C:Predicted  False  True  All
+R:Actual                     
+False           17     1   18
+True             0     2    2
+All             17     3   20
+Accuracy:	95%
+Fscore:		80%
+Precision:	67%
+Recall:		100%
+
+Epochs: 3
+
+03
+C:Predicted  False  True  All
+R:Actual                     
+False           17     1   18
+True             1     1    2
+All             18     2   20
+Accuracy:	90%
+Fscore:		50%
+Precision:	50%
+Recall:		50%
+
+Epochs: 4
+
+03
+C:Predicted  False  True  All
+R:Actual                     
+False           17     1   18
+True             1     1    2
+All             18     2   20
+Accuracy:	90%
+Fscore:		50%
+Precision:	50%
+Recall:		50%
+
+Epochs: 5
+
+03
+C:Predicted  False  True  All
+R:Actual                     
+False           17     1   18
+True             1     1    2
+All             18     2   20
+Accuracy:	90%
+Fscore:		50%
+Precision:	50%
+Recall:		50%
+
+Epochs: 1
+
+05
+C:Predicted  False  True  All
+R:Actual                     
+False            1     1    2
+True             1    17   18
+All              2    18   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	94%
+Recall:		94%
+
+Epochs: 2
+
+05
+C:Predicted  False  True  All
+R:Actual                     
+False            1     1    2
+True             1    17   18
+All              2    18   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	94%
+Recall:		94%
+
+Epochs: 3
+
+05
+C:Predicted  False  True  All
+R:Actual                     
+False            1     1    2
+True             1    17   18
+All              2    18   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	94%
+Recall:		94%
+
+Epochs: 4
+
+05
+C:Predicted  False  True  All
+R:Actual                     
+False            1     1    2
+True             1    17   18
+All              2    18   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	94%
+Recall:		94%
+
+Epochs: 5
+
+05
+C:Predicted  False  True  All
+R:Actual                     
+False            1     1    2
+True             2    16   18
+All              3    17   20
+Accuracy:	85%
+Fscore:		91%
+Precision:	94%
+Recall:		89%
+
+Epochs: 1
+
+06
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             3    10   13
+All              8    12   20
+Accuracy:	75%
+Fscore:		80%
+Precision:	83%
+Recall:		77%
+
+Epochs: 2
+
+06
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             2    11   13
+All              7    13   20
+Accuracy:	80%
+Fscore:		85%
+Precision:	85%
+Recall:		85%
+
+Epochs: 3
+
+06
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             2    11   13
+All              7    13   20
+Accuracy:	80%
+Fscore:		85%
+Precision:	85%
+Recall:		85%
+
+Epochs: 4
+
+06
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             2    11   13
+All              7    13   20
+Accuracy:	80%
+Fscore:		85%
+Precision:	85%
+Recall:		85%
+
+Epochs: 5
+
+06
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             2    11   13
+All              7    13   20
+Accuracy:	80%
+Fscore:		85%
+Precision:	85%
+Recall:		85%
+
+Epochs: 1
+
+07
+C:Predicted  False  True  All
+R:Actual                     
+False            9     1   10
+True             2     8   10
+All             11     9   20
+Accuracy:	85%
+Fscore:		84%
+Precision:	89%
+Recall:		80%
+
+Epochs: 2
+
+07
+C:Predicted  False  True  All
+R:Actual                     
+False            8     2   10
+True             0    10   10
+All              8    12   20
+Accuracy:	90%
+Fscore:		91%
+Precision:	83%
+Recall:		100%
+
+Epochs: 3
+
+07
+C:Predicted  False  True  All
+R:Actual                     
+False            9     1   10
+True             3     7   10
+All             12     8   20
+Accuracy:	80%
+Fscore:		78%
+Precision:	88%
+Recall:		70%
+
+Epochs: 4
+
+07
+C:Predicted  False  True  All
+R:Actual                     
+False            9     1   10
+True             3     7   10
+All             12     8   20
+Accuracy:	80%
+Fscore:		78%
+Precision:	88%
+Recall:		70%
+
+Epochs: 5
+
+07
+C:Predicted  False  True  All
+R:Actual                     
+False           10     0   10
+True             7     3   10
+All             17     3   20
+Accuracy:	65%
+Fscore:		46%
+Precision:	100%
+Recall:		30%
+
+Epochs: 1
+
+09
+C:Predicted  False  True  All
+R:Actual                     
+False            8     5   13
+True             1     6    7
+All              9    11   20
+Accuracy:	70%
+Fscore:		67%
+Precision:	55%
+Recall:		86%
+
+Epochs: 2
+
+09
+C:Predicted  False  True  All
+R:Actual                     
+False            5     8   13
+True             0     7    7
+All              5    15   20
+Accuracy:	60%
+Fscore:		64%
+Precision:	47%
+Recall:		100%
+
+Epochs: 3
+
+09
+C:Predicted  False  True  All
+R:Actual                     
+False            3    10   13
+True             0     7    7
+All              3    17   20
+Accuracy:	50%
+Fscore:		58%
+Precision:	41%
+Recall:		100%
+
+Epochs: 4
+
+09
+C:Predicted  False  True  All
+R:Actual                     
+False            6     7   13
+True             0     7    7
+All              6    14   20
+Accuracy:	65%
+Fscore:		67%
+Precision:	50%
+Recall:		100%
+
+Epochs: 5
+
+09
+C:Predicted  False  True  All
+R:Actual                     
+False            8     5   13
+True             0     7    7
+All              8    12   20
+Accuracy:	75%
+Fscore:		74%
+Precision:	58%
+Recall:		100%
+
+Epochs: 1
+
+10
+C:Predicted  False  True  All
+R:Actual                     
+False            4     3    7
+True             3    10   13
+All              7    13   20
+Accuracy:	70%
+Fscore:		77%
+Precision:	77%
+Recall:		77%
+
+Epochs: 2
+
+10
+C:Predicted  False  True  All
+R:Actual                     
+False            4     3    7
+True             3    10   13
+All              7    13   20
+Accuracy:	70%
+Fscore:		77%
+Precision:	77%
+Recall:		77%
+
+Epochs: 3
+
+10
+C:Predicted  False  True  All
+R:Actual                     
+False            3     4    7
+True             2    11   13
+All              5    15   20
+Accuracy:	70%
+Fscore:		79%
+Precision:	73%
+Recall:		85%
+
+Epochs: 4
+
+10
+C:Predicted  False  True  All
+R:Actual                     
+False            4     3    7
+True             3    10   13
+All              7    13   20
+Accuracy:	70%
+Fscore:		77%
+Precision:	77%
+Recall:		77%
+
+Epochs: 5
+
+10
+C:Predicted  False  True  All
+R:Actual                     
+False            4     3    7
+True             3    10   13
+All              7    13   20
+Accuracy:	70%
+Fscore:		77%
+Precision:	77%
+Recall:		77%
+
+Epochs: 1
+
+12
+C:Predicted  False  True  All
+R:Actual                     
+False            8     2   10
+True             3     7   10
+All             11     9   20
+Accuracy:	75%
+Fscore:		74%
+Precision:	78%
+Recall:		70%
+
+Epochs: 2
+
+12
+C:Predicted  False  True  All
+R:Actual                     
+False            7     3   10
+True             3     7   10
+All             10    10   20
+Accuracy:	70%
+Fscore:		70%
+Precision:	70%
+Recall:		70%
+
+Epochs: 3
+
+12
+C:Predicted  False  True  All
+R:Actual                     
+False            7     3   10
+True             1     9   10
+All              8    12   20
+Accuracy:	80%
+Fscore:		82%
+Precision:	75%
+Recall:		90%
+
+Epochs: 4
+
+12
+C:Predicted  False  True  All
+R:Actual                     
+False            7     3   10
+True             3     7   10
+All             10    10   20
+Accuracy:	70%
+Fscore:		70%
+Precision:	70%
+Recall:		70%
+
+Epochs: 5
+
+12
+C:Predicted  False  True  All
+R:Actual                     
+False            8     2   10
+True             4     6   10
+All             12     8   20
+Accuracy:	70%
+Fscore:		67%
+Precision:	75%
+Recall:		60%
+
+Epochs: 1
+
+17
+C:Predicted  False  True  All
+R:Actual                     
+False            0     1    1
+True             1    18   19
+All              1    19   20
+Accuracy:	90%
+Fscore:		95%
+Precision:	95%
+Recall:		95%
+
+Epochs: 2
+
+17
+C:Predicted  True  All
+R:Actual              
+False           1    1
+True           19   19
+All            20   20
+Accuracy:	95%
+Fscore:		97%
+Precision:	95%
+Recall:		100%
+
+Epochs: 3
+
+17
+C:Predicted  True  All
+R:Actual              
+False           1    1
+True           19   19
+All            20   20
+Accuracy:	95%
+Fscore:		97%
+Precision:	95%
+Recall:		100%
+
+Epochs: 4
+
+17
+C:Predicted  False  True  All
+R:Actual                     
+False            0     1    1
+True             1    18   19
+All              1    19   20
+Accuracy:	90%
+Fscore:		95%
+Precision:	95%
+Recall:		95%
+
+Epochs: 5
+
+17
+C:Predicted  False  True  All
+R:Actual                     
+False            0     1    1
+True             1    18   19
+All              1    19   20
+Accuracy:	90%
+Fscore:		95%
+Precision:	95%
+Recall:		95%
+
+Epochs: 1
+
+19
+C:Predicted  False  True  All
+R:Actual                     
+False           15     2   17
+True             1     2    3
+All             16     4   20
+Accuracy:	85%
+Fscore:		57%
+Precision:	50%
+Recall:		67%
+
+Epochs: 2
+
+19
+C:Predicted  False  True  All
+R:Actual                     
+False           12     5   17
+True             0     3    3
+All             12     8   20
+Accuracy:	75%
+Fscore:		55%
+Precision:	38%
+Recall:		100%
+
+Epochs: 3
+
+19
+C:Predicted  False  True  All
+R:Actual                     
+False           10     7   17
+True             0     3    3
+All             10    10   20
+Accuracy:	65%
+Fscore:		46%
+Precision:	30%
+Recall:		100%
+
+Epochs: 4
+
+19
+C:Predicted  False  True  All
+R:Actual                     
+False           12     5   17
+True             0     3    3
+All             12     8   20
+Accuracy:	75%
+Fscore:		55%
+Precision:	38%
+Recall:		100%
+
+Epochs: 5
+
+19
+C:Predicted  False  True  All
+R:Actual                     
+False           15     2   17
+True             1     2    3
+All             16     4   20
+Accuracy:	85%
+Fscore:		57%
+Precision:	50%
+Recall:		67%
+
+Epochs: 1
+
+21
+C:Predicted  False  True  All
+R:Actual                     
+False           10     4   14
+True             1     5    6
+All             11     9   20
+Accuracy:	75%
+Fscore:		67%
+Precision:	56%
+Recall:		83%
+
+Epochs: 2
+
+21
+C:Predicted  False  True  All
+R:Actual                     
+False            7     7   14
+True             1     5    6
+All              8    12   20
+Accuracy:	60%
+Fscore:		56%
+Precision:	42%
+Recall:		83%
+
+Epochs: 3
+
+21
+C:Predicted  False  True  All
+R:Actual                     
+False            7     7   14
+True             1     5    6
+All              8    12   20
+Accuracy:	60%
+Fscore:		56%
+Precision:	42%
+Recall:		83%
+
+Epochs: 4
+
+21
+C:Predicted  False  True  All
+R:Actual                     
+False            7     7   14
+True             1     5    6
+All              8    12   20
+Accuracy:	60%
+Fscore:		56%
+Precision:	42%
+Recall:		83%
+
+Epochs: 5
+
+21
+C:Predicted  False  True  All
+R:Actual                     
+False            9     5   14
+True             1     5    6
+All             10    10   20
+Accuracy:	70%
+Fscore:		62%
+Precision:	50%
+Recall:		83%
+
+Epochs: 1
+
+22
+C:Predicted  False  True  All
+R:Actual                     
+False            3     1    4
+True             3    13   16
+All              6    14   20
+Accuracy:	80%
+Fscore:		87%
+Precision:	93%
+Recall:		81%
+
+Epochs: 2
+
+22
+C:Predicted  False  True  All
+R:Actual                     
+False            3     1    4
+True             2    14   16
+All              5    15   20
+Accuracy:	85%
+Fscore:		90%
+Precision:	93%
+Recall:		88%
+
+Epochs: 3
+
+22
+C:Predicted  False  True  All
+R:Actual                     
+False            3     1    4
+True             1    15   16
+All              4    16   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	94%
+Recall:		94%
+
+Epochs: 4
+
+22
+C:Predicted  False  True  All
+R:Actual                     
+False            3     1    4
+True             2    14   16
+All              5    15   20
+Accuracy:	85%
+Fscore:		90%
+Precision:	93%
+Recall:		88%
+
+Epochs: 5
+
+22
+C:Predicted  False  True  All
+R:Actual                     
+False            4     0    4
+True             2    14   16
+All              6    14   20
+Accuracy:	90%
+Fscore:		93%
+Precision:	100%
+Recall:		88%
+
+Epochs: 1
+
+23
+C:Predicted  False  True  All
+R:Actual                     
+False            8     2   10
+True             3     7   10
+All             11     9   20
+Accuracy:	75%
+Fscore:		74%
+Precision:	78%
+Recall:		70%
+
+Epochs: 2
+
+23
+C:Predicted  False  True  All
+R:Actual                     
+False            7     3   10
+True             0    10   10
+All              7    13   20
+Accuracy:	85%
+Fscore:		87%
+Precision:	77%
+Recall:		100%
+
+Epochs: 3
+
+23
+C:Predicted  False  True  All
+R:Actual                     
+False            6     4   10
+True             0    10   10
+All              6    14   20
+Accuracy:	80%
+Fscore:		83%
+Precision:	71%
+Recall:		100%
+
+Epochs: 4
+
+23
+C:Predicted  False  True  All
+R:Actual                     
+False            7     3   10
+True             1     9   10
+All              8    12   20
+Accuracy:	80%
+Fscore:		82%
+Precision:	75%
+Recall:		90%
+
+Epochs: 5
+
+23
+C:Predicted  False  True  All
+R:Actual                     
+False            7     3   10
+True             2     8   10
+All              9    11   20
+Accuracy:	75%
+Fscore:		76%
+Precision:	73%
+Recall:		80%
+
+Epochs: 1
+
+25
+C:Predicted  False  True  All
+R:Actual                     
+False            1     3    4
+True             1    15   16
+All              2    18   20
+Accuracy:	80%
+Fscore:		88%
+Precision:	83%
+Recall:		94%
+
+Epochs: 2
+
+25
+C:Predicted  False  True  All
+R:Actual                     
+False            1     3    4
+True             1    15   16
+All              2    18   20
+Accuracy:	80%
+Fscore:		88%
+Precision:	83%
+Recall:		94%
+
+Epochs: 3
+
+25
+C:Predicted  False  True  All
+R:Actual                     
+False            1     3    4
+True             1    15   16
+All              2    18   20
+Accuracy:	80%
+Fscore:		88%
+Precision:	83%
+Recall:		94%
+
+Epochs: 4
+
+25
+C:Predicted  False  True  All
+R:Actual                     
+False            1     3    4
+True             1    15   16
+All              2    18   20
+Accuracy:	80%
+Fscore:		88%
+Precision:	83%
+Recall:		94%
+
+Epochs: 5
+
+25
+C:Predicted  False  True  All
+R:Actual                     
+False            3     1    4
+True             1    15   16
+All              4    16   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	94%
+Recall:		94%
+
+Epochs: 1
+
+27
+C:Predicted  False  True  All
+R:Actual                     
+False            3     2    5
+True             0    15   15
+All              3    17   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	88%
+Recall:		100%
+
+Epochs: 2
+
+27
+C:Predicted  False  True  All
+R:Actual                     
+False            3     2    5
+True             0    15   15
+All              3    17   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	88%
+Recall:		100%
+
+Epochs: 3
+
+27
+C:Predicted  False  True  All
+R:Actual                     
+False            3     2    5
+True             0    15   15
+All              3    17   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	88%
+Recall:		100%
+
+Epochs: 4
+
+27
+C:Predicted  False  True  All
+R:Actual                     
+False            3     2    5
+True             0    15   15
+All              3    17   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	88%
+Recall:		100%
+
+Epochs: 5
+
+27
+C:Predicted  False  True  All
+R:Actual                     
+False            3     2    5
+True             0    15   15
+All              3    17   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	88%
+Recall:		100%
+
+Epochs: 1
+
+30
+C:Predicted  False  True  All
+R:Actual                     
+False            2     2    4
+True             0    16   16
+All              2    18   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	89%
+Recall:		100%
+
+Epochs: 2
+
+30
+C:Predicted  False  True  All
+R:Actual                     
+False            2     2    4
+True             0    16   16
+All              2    18   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	89%
+Recall:		100%
+
+Epochs: 3
+
+30
+C:Predicted  False  True  All
+R:Actual                     
+False            3     1    4
+True             0    16   16
+All              3    17   20
+Accuracy:	95%
+Fscore:		97%
+Precision:	94%
+Recall:		100%
+
+Epochs: 4
+
+30
+C:Predicted  False  True  All
+R:Actual                     
+False            2     2    4
+True             0    16   16
+All              2    18   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	89%
+Recall:		100%
+
+Epochs: 5
+
+30
+C:Predicted  False  True  All
+R:Actual                     
+False            3     1    4
+True             0    16   16
+All              3    17   20
+Accuracy:	95%
+Fscore:		97%
+Precision:	94%
+Recall:		100%
+
+Epochs: 1
+
+33
+C:Predicted  False  True  All
+R:Actual                     
+False            0     3    3
+True             1    16   17
+All              1    19   20
+Accuracy:	80%
+Fscore:		89%
+Precision:	84%
+Recall:		94%
+
+Epochs: 2
+
+33
+C:Predicted  False  True  All
+R:Actual                     
+False            1     2    3
+True             1    16   17
+All              2    18   20
+Accuracy:	85%
+Fscore:		91%
+Precision:	89%
+Recall:		94%
+
+Epochs: 3
+
+33
+C:Predicted  False  True  All
+R:Actual                     
+False            2     1    3
+True             1    16   17
+All              3    17   20
+Accuracy:	90%
+Fscore:		94%
+Precision:	94%
+Recall:		94%
+
+Epochs: 4
+
+33
+C:Predicted  False  True  All
+R:Actual                     
+False            1     2    3
+True             1    16   17
+All              2    18   20
+Accuracy:	85%
+Fscore:		91%
+Precision:	89%
+Recall:		94%
+
+Epochs: 5
+
+33
+C:Predicted  False  True  All
+R:Actual                     
+False            3     0    3
+True             1    16   17
+All              4    16   20
+Accuracy:	95%
+Fscore:		97%
+Precision:	100%
+Recall:		94%
+
+Epochs: 1
+
+35
+C:Predicted  False  True  All
+R:Actual                     
+False           10     4   14
+True             0     6    6
+All             10    10   20
+Accuracy:	80%
+Fscore:		75%
+Precision:	60%
+Recall:		100%
+
+Epochs: 2
+
+35
+C:Predicted  False  True  All
+R:Actual                     
+False           10     4   14
+True             0     6    6
+All             10    10   20
+Accuracy:	80%
+Fscore:		75%
+Precision:	60%
+Recall:		100%
+
+Epochs: 3
+
+35
+C:Predicted  False  True  All
+R:Actual                     
+False           12     2   14
+True             0     6    6
+All             12     8   20
+Accuracy:	90%
+Fscore:		86%
+Precision:	75%
+Recall:		100%
+
+Epochs: 4
+
+35
+C:Predicted  False  True  All
+R:Actual                     
+False           11     3   14
+True             0     6    6
+All             11     9   20
+Accuracy:	85%
+Fscore:		80%
+Precision:	67%
+Recall:		100%
+
+Epochs: 5
+
+35
+C:Predicted  False  True  All
+R:Actual                     
+False           12     2   14
+True             2     4    6
+All             14     6   20
+Accuracy:	80%
+Fscore:		67%
+Precision:	67%
+Recall:		67%
+
+Epochs: 1
+
+48Vg8sUG
+C:Predicted  False  True  All
+R:Actual                     
+False            5     3    8
+True             0    12   12
+All              5    15   20
+Accuracy:	85%
+Fscore:		89%
+Precision:	80%
+Recall:		100%
+
+Epochs: 2
+
+48Vg8sUG
+C:Predicted  False  True  All
+R:Actual                     
+False            5     3    8
+True             0    12   12
+All              5    15   20
+Accuracy:	85%
+Fscore:		89%
+Precision:	80%
+Recall:		100%
+
+Epochs: 3
+
+48Vg8sUG
+C:Predicted  False  True  All
+R:Actual                     
+False            5     3    8
+True             0    12   12
+All              5    15   20
+Accuracy:	85%
+Fscore:		89%
+Precision:	80%
+Recall:		100%
+
+Epochs: 4
+
+48Vg8sUG
+C:Predicted  False  True  All
+R:Actual                     
+False            5     3    8
+True             0    12   12
+All              5    15   20
+Accuracy:	85%
+Fscore:		89%
+Precision:	80%
+Recall:		100%
+
+Epochs: 5
+
+48Vg8sUG
+C:Predicted  False  True  All
+R:Actual                     
+False            7     1    8
+True             2    10   12
+All              9    11   20
+Accuracy:	85%
+Fscore:		87%
+Precision:	91%
+Recall:		83%
+
+Epochs: 1
+
+AObwG1H9
+C:Predicted  False  True  All
+R:Actual                     
+False            5     3    8
+True             2    10   12
+All              7    13   20
+Accuracy:	75%
+Fscore:		80%
+Precision:	77%
+Recall:		83%
+
+Epochs: 2
+
+AObwG1H9
+C:Predicted  False  True  All
+R:Actual                     
+False            6     2    8
+True             2    10   12
+All              8    12   20
+Accuracy:	80%
+Fscore:		83%
+Precision:	83%
+Recall:		83%
+
+Epochs: 3
+
+AObwG1H9
+C:Predicted  False  True  All
+R:Actual                     
+False            6     2    8
+True             3     9   12
+All              9    11   20
+Accuracy:	75%
+Fscore:		78%
+Precision:	82%
+Recall:		75%
+
+Epochs: 4
+
+AObwG1H9
+C:Predicted  False  True  All
+R:Actual                     
+False            7     1    8
+True             4     8   12
+All             11     9   20
+Accuracy:	75%
+Fscore:		76%
+Precision:	89%
+Recall:		67%
+
+Epochs: 5
+
+AObwG1H9
+C:Predicted  False  True  All
+R:Actual                     
+False            7     1    8
+True             5     7   12
+All             12     8   20
+Accuracy:	70%
+Fscore:		70%
+Precision:	88%
+Recall:		58%
+
+Epochs: 1
+
+BtL+JEO2
+C:Predicted  False  True  All
+R:Actual                     
+False            7     4   11
+True             0     9    9
+All              7    13   20
+Accuracy:	80%
+Fscore:		82%
+Precision:	69%
+Recall:		100%
+
+Epochs: 2
+
+BtL+JEO2
+C:Predicted  False  True  All
+R:Actual                     
+False            7     4   11
+True             0     9    9
+All              7    13   20
+Accuracy:	80%
+Fscore:		82%
+Precision:	69%
+Recall:		100%
+
+Epochs: 3
+
+BtL+JEO2
+C:Predicted  False  True  All
+R:Actual                     
+False            7     4   11
+True             0     9    9
+All              7    13   20
+Accuracy:	80%
+Fscore:		82%
+Precision:	69%
+Recall:		100%
+
+Epochs: 4
+
+BtL+JEO2
+C:Predicted  False  True  All
+R:Actual                     
+False           11     0   11
+True             0     9    9
+All             11     9   20
+Accuracy:	100%
+Fscore:		100%
+Precision:	100%
+Recall:		100%
+
+Epochs: 5
+
+BtL+JEO2
+C:Predicted  False  True  All
+R:Actual                     
+False           11     0   11
+True             2     7    9
+All             13     7   20
+Accuracy:	90%
+Fscore:		88%
+Precision:	100%
+Recall:		78%
+
+Epochs: 1
+
+EJ1BSqBp
+C:Predicted  False  True  All
+R:Actual                     
+False            1     3    4
+True             1    15   16
+All              2    18   20
+Accuracy:	80%
+Fscore:		88%
+Precision:	83%
+Recall:		94%
+
+Epochs: 2
+
+EJ1BSqBp
+C:Predicted  False  True  All
+R:Actual                     
+False            2     2    4
+True             1    15   16
+All              3    17   20
+Accuracy:	85%
+Fscore:		91%
+Precision:	88%
+Recall:		94%
+
+Epochs: 3
+
+EJ1BSqBp
+C:Predicted  False  True  All
+R:Actual                     
+False            2     2    4
+True             1    15   16
+All              3    17   20
+Accuracy:	85%
+Fscore:		91%
+Precision:	88%
+Recall:		94%
+
+Epochs: 4
+
+EJ1BSqBp
+C:Predicted  False  True  All
+R:Actual                     
+False            2     2    4
+True             1    15   16
+All              3    17   20
+Accuracy:	85%
+Fscore:		91%
+Precision:	88%
+Recall:		94%
+
+Epochs: 5
+
+EJ1BSqBp
+C:Predicted  False  True  All
+R:Actual                     
+False            3     1    4
+True             2    14   16
+All              5    15   20
+Accuracy:	85%
+Fscore:		90%
+Precision:	93%
+Recall:		88%
+
+Epochs: 1
+
+FHKR50Nr
+C:Predicted  False  True  All
+R:Actual                     
+False            6     5   11
+True             0     9    9
+All              6    14   20
+Accuracy:	75%
+Fscore:		78%
+Precision:	64%
+Recall:		100%
+
+Epochs: 2
+
+FHKR50Nr
+C:Predicted  False  True  All
+R:Actual                     
+False            8     3   11
+True             0     9    9
+All              8    12   20
+Accuracy:	85%
+Fscore:		86%
+Precision:	75%
+Recall:		100%
+
+Epochs: 3
+
+FHKR50Nr
+C:Predicted  False  True  All
+R:Actual                     
+False            8     3   11
+True             0     9    9
+All              8    12   20
+Accuracy:	85%
+Fscore:		86%
+Precision:	75%
+Recall:		100%
+
+Epochs: 4
+
+FHKR50Nr
+C:Predicted  False  True  All
+R:Actual                     
+False            7     4   11
+True             0     9    9
+All              7    13   20
+Accuracy:	80%
+Fscore:		82%
+Precision:	69%
+Recall:		100%
+
+Epochs: 5
+
+FHKR50Nr
+C:Predicted  False  True  All
+R:Actual                     
+False           11     0   11
+True             2     7    9
+All             13     7   20
+Accuracy:	90%
+Fscore:		88%
+Precision:	100%
+Recall:		78%
+
+Epochs: 1
+
+R+OjAe40
+C:Predicted  False  True  All
+R:Actual                     
+False            5     4    9
+True             1    10   11
+All              6    14   20
+Accuracy:	75%
+Fscore:		80%
+Precision:	71%
+Recall:		91%
+
+Epochs: 2
+
+R+OjAe40
+C:Predicted  False  True  All
+R:Actual                     
+False            7     2    9
+True             2     9   11
+All              9    11   20
+Accuracy:	80%
+Fscore:		82%
+Precision:	82%
+Recall:		82%
+
+Epochs: 3
+
+R+OjAe40
+C:Predicted  False  True  All
+R:Actual                     
+False            6     3    9
+True             2     9   11
+All              8    12   20
+Accuracy:	75%
+Fscore:		78%
+Precision:	75%
+Recall:		82%
+
+Epochs: 4
+
+R+OjAe40
+C:Predicted  False  True  All
+R:Actual                     
+False            4     5    9
+True             1    10   11
+All              5    15   20
+Accuracy:	70%
+Fscore:		77%
+Precision:	67%
+Recall:		91%
+
+Epochs: 5
+
+R+OjAe40
+C:Predicted  False  True  All
+R:Actual                     
+False            9     0    9
+True             4     7   11
+All             13     7   20
+Accuracy:	80%
+Fscore:		78%
+Precision:	100%
+Recall:		64%
+
+Epochs: 1
+
+S9C28Bsr
+C:Predicted  False  True  All
+R:Actual                     
+False            9     2   11
+True             1     8    9
+All             10    10   20
+Accuracy:	85%
+Fscore:		84%
+Precision:	80%
+Recall:		89%
+
+Epochs: 2
+
+S9C28Bsr
+C:Predicted  False  True  All
+R:Actual                     
+False            8     3   11
+True             1     8    9
+All              9    11   20
+Accuracy:	80%
+Fscore:		80%
+Precision:	73%
+Recall:		89%
+
+Epochs: 3
+
+S9C28Bsr
+C:Predicted  False  True  All
+R:Actual                     
+False            8     3   11
+True             1     8    9
+All              9    11   20
+Accuracy:	80%
+Fscore:		80%
+Precision:	73%
+Recall:		89%
+
+Epochs: 4
+
+S9C28Bsr
+C:Predicted  False  True  All
+R:Actual                     
+False            8     3   11
+True             0     9    9
+All              8    12   20
+Accuracy:	85%
+Fscore:		86%
+Precision:	75%
+Recall:		100%
+
+Epochs: 5
+
+S9C28Bsr
+C:Predicted  False  True  All
+R:Actual                     
+False            9     2   11
+True             2     7    9
+All             11     9   20
+Accuracy:	80%
+Fscore:		78%
+Precision:	78%
+Recall:		78%
+
+Epochs: 1
+
+SQJYfdeO
+C:Predicted  False  True  All
+R:Actual                     
+False            1     3    4
+True             1    15   16
+All              2    18   20
+Accuracy:	80%
+Fscore:		88%
+Precision:	83%
+Recall:		94%
+
+Epochs: 2
+
+SQJYfdeO
+C:Predicted  False  True  All
+R:Actual                     
+False            1     3    4
+True             1    15   16
+All              2    18   20
+Accuracy:	80%
+Fscore:		88%
+Precision:	83%
+Recall:		94%
+
+Epochs: 3
+
+SQJYfdeO
+C:Predicted  False  True  All
+R:Actual                     
+False            1     3    4
+True             1    15   16
+All              2    18   20
+Accuracy:	80%
+Fscore:		88%
+Precision:	83%
+Recall:		94%
+
+Epochs: 4
+
+SQJYfdeO
+C:Predicted  False  True  All
+R:Actual                     
+False            1     3    4
+True             1    15   16
+All              2    18   20
+Accuracy:	80%
+Fscore:		88%
+Precision:	83%
+Recall:		94%
+
+Epochs: 5
+
+SQJYfdeO
+C:Predicted  False  True  All
+R:Actual                     
+False            2     2    4
+True             1    15   16
+All              3    17   20
+Accuracy:	85%
+Fscore:		91%
+Precision:	88%
+Recall:		94%
+
+Epochs: 1
+
+Tbvdm7kN
+C:Predicted  False  True  All
+R:Actual                     
+False            5     5   10
+True             1     9   10
+All              6    14   20
+Accuracy:	70%
+Fscore:		75%
+Precision:	64%
+Recall:		90%
+
+Epochs: 2
+
+Tbvdm7kN
+C:Predicted  False  True  All
+R:Actual                     
+False            7     3   10
+True             2     8   10
+All              9    11   20
+Accuracy:	75%
+Fscore:		76%
+Precision:	73%
+Recall:		80%
+
+Epochs: 3
+
+Tbvdm7kN
+C:Predicted  False  True  All
+R:Actual                     
+False            5     5   10
+True             1     9   10
+All              6    14   20
+Accuracy:	70%
+Fscore:		75%
+Precision:	64%
+Recall:		90%
+
+Epochs: 4
+
+Tbvdm7kN
+C:Predicted  False  True  All
+R:Actual                     
+False            4     6   10
+True             1     9   10
+All              5    15   20
+Accuracy:	65%
+Fscore:		72%
+Precision:	60%
+Recall:		90%
+
+Epochs: 5
+
+Tbvdm7kN
+C:Predicted  False  True  All
+R:Actual                     
+False            9     1   10
+True             4     6   10
+All             13     7   20
+Accuracy:	75%
+Fscore:		71%
+Precision:	86%
+Recall:		60%
+
+Epochs: 1
+
+UQK7mPhQ
+C:Predicted  False  True  All
+R:Actual                     
+False            5     3    8
+True             2    10   12
+All              7    13   20
+Accuracy:	75%
+Fscore:		80%
+Precision:	77%
+Recall:		83%
+
+Epochs: 2
+
+UQK7mPhQ
+C:Predicted  False  True  All
+R:Actual                     
+False            6     2    8
+True             3     9   12
+All              9    11   20
+Accuracy:	75%
+Fscore:		78%
+Precision:	82%
+Recall:		75%
+
+Epochs: 3
+
+UQK7mPhQ
+C:Predicted  False  True  All
+R:Actual                     
+False            4     4    8
+True             2    10   12
+All              6    14   20
+Accuracy:	70%
+Fscore:		77%
+Precision:	71%
+Recall:		83%
+
+Epochs: 4
+
+UQK7mPhQ
+C:Predicted  False  True  All
+R:Actual                     
+False            3     5    8
+True             1    11   12
+All              4    16   20
+Accuracy:	70%
+Fscore:		79%
+Precision:	69%
+Recall:		92%
+
+Epochs: 5
+
+UQK7mPhQ
+C:Predicted  False  True  All
+R:Actual                     
+False            6     2    8
+True             4     8   12
+All             10    10   20
+Accuracy:	70%
+Fscore:		73%
+Precision:	80%
+Recall:		67%
+
+Epochs: 1
+
+iPP5f2RU
+C:Predicted  False  True  All
+R:Actual                     
+False            5     4    9
+True             1    10   11
+All              6    14   20
+Accuracy:	75%
+Fscore:		80%
+Precision:	71%
+Recall:		91%
+
+Epochs: 2
+
+iPP5f2RU
+C:Predicted  False  True  All
+R:Actual                     
+False            9     0    9
+True             5     6   11
+All             14     6   20
+Accuracy:	75%
+Fscore:		71%
+Precision:	100%
+Recall:		55%
+
+Epochs: 3
+
+iPP5f2RU
+C:Predicted  False  True  All
+R:Actual                     
+False            6     3    9
+True             1    10   11
+All              7    13   20
+Accuracy:	80%
+Fscore:		83%
+Precision:	77%
+Recall:		91%
+
+Epochs: 4
+
+iPP5f2RU
+C:Predicted  False  True  All
+R:Actual                     
+False            6     3    9
+True             1    10   11
+All              7    13   20
+Accuracy:	80%
+Fscore:		83%
+Precision:	77%
+Recall:		91%
+
+Epochs: 5
+
+iPP5f2RU
+C:Predicted  False  True  All
+R:Actual                     
+False            8     1    9
+True             2     9   11
+All             10    10   20
+Accuracy:	85%
+Fscore:		86%
+Precision:	90%
+Recall:		82%
+
+Epochs: 1
+
+iW9isRmH
+C:Predicted  False  True  All
+R:Actual                     
+False            5     4    9
+True             0    11   11
+All              5    15   20
+Accuracy:	80%
+Fscore:		85%
+Precision:	73%
+Recall:		100%
+
+Epochs: 2
+
+iW9isRmH
+C:Predicted  False  True  All
+R:Actual                     
+False            8     1    9
+True             4     7   11
+All             12     8   20
+Accuracy:	75%
+Fscore:		74%
+Precision:	88%
+Recall:		64%
+
+Epochs: 3
+
+iW9isRmH
+C:Predicted  False  True  All
+R:Actual                     
+False            6     3    9
+True             0    11   11
+All              6    14   20
+Accuracy:	85%
+Fscore:		88%
+Precision:	79%
+Recall:		100%
+
+Epochs: 4
+
+iW9isRmH
+C:Predicted  False  True  All
+R:Actual                     
+False            6     3    9
+True             0    11   11
+All              6    14   20
+Accuracy:	85%
+Fscore:		88%
+Precision:	79%
+Recall:		100%
+
+Epochs: 5
+
+iW9isRmH
+C:Predicted  False  True  All
+R:Actual                     
+False            8     1    9
+True             0    11   11
+All              8    12   20
+Accuracy:	95%
+Fscore:		96%
+Precision:	92%
+Recall:		100%
+
+Epochs: 1
+
+m9Ro5MbX
+C:Predicted  False  True  All
+R:Actual                     
+False            9     4   13
+True             0     7    7
+All              9    11   20
+Accuracy:	80%
+Fscore:		78%
+Precision:	64%
+Recall:		100%
+
+Epochs: 2
+
+m9Ro5MbX
+C:Predicted  False  True  All
+R:Actual                     
+False           13     0   13
+True             1     6    7
+All             14     6   20
+Accuracy:	95%
+Fscore:		92%
+Precision:	100%
+Recall:		86%
+
+Epochs: 3
+
+m9Ro5MbX
+C:Predicted  False  True  All
+R:Actual                     
+False            8     5   13
+True             0     7    7
+All              8    12   20
+Accuracy:	75%
+Fscore:		74%
+Precision:	58%
+Recall:		100%
+
+Epochs: 4
+
+m9Ro5MbX
+C:Predicted  False  True  All
+R:Actual                     
+False            8     5   13
+True             0     7    7
+All              8    12   20
+Accuracy:	75%
+Fscore:		74%
+Precision:	58%
+Recall:		100%
+
+Epochs: 5
+
+m9Ro5MbX
+C:Predicted  False  True  All
+R:Actual                     
+False           11     2   13
+True             0     7    7
+All             11     9   20
+Accuracy:	90%
+Fscore:		88%
+Precision:	78%
+Recall:		100%
+
+Epochs: 1
+
+mCELTxF_
+C:Predicted  False  True  All
+R:Actual                     
+False            6     2    8
+True             0    12   12
+All              6    14   20
+Accuracy:	90%
+Fscore:		92%
+Precision:	86%
+Recall:		100%
+
+Epochs: 2
+
+mCELTxF_
+C:Predicted  False  True  All
+R:Actual                     
+False            8     0    8
+True             7     5   12
+All             15     5   20
+Accuracy:	65%
+Fscore:		59%
+Precision:	100%
+Recall:		42%
+
+Epochs: 3
+
+mCELTxF_
+C:Predicted  False  True  All
+R:Actual                     
+False            6     2    8
+True             0    12   12
+All              6    14   20
+Accuracy:	90%
+Fscore:		92%
+Precision:	86%
+Recall:		100%
+
+Epochs: 4
+
+mCELTxF_
+C:Predicted  False  True  All
+R:Actual                     
+False            6     2    8
+True             2    10   12
+All              8    12   20
+Accuracy:	80%
+Fscore:		83%
+Precision:	83%
+Recall:		83%
+
+Epochs: 5
+
+mCELTxF_
+C:Predicted  False  True  All
+R:Actual                     
+False            6     2    8
+True             4     8   12
+All             10    10   20
+Accuracy:	70%
+Fscore:		73%
+Precision:	80%
+Recall:		67%
+
+Epochs: 1
+
+tC6DNx32
+C:Predicted  False  True  All
+R:Actual                     
+False            4     3    7
+True             0    13   13
+All              4    16   20
+Accuracy:	85%
+Fscore:		90%
+Precision:	81%
+Recall:		100%
+
+Epochs: 2
+
+tC6DNx32
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             1    12   13
+All              6    14   20
+Accuracy:	85%
+Fscore:		89%
+Precision:	86%
+Recall:		92%
+
+Epochs: 3
+
+tC6DNx32
+C:Predicted  False  True  All
+R:Actual                     
+False            4     3    7
+True             0    13   13
+All              4    16   20
+Accuracy:	85%
+Fscore:		90%
+Precision:	81%
+Recall:		100%
+
+Epochs: 4
+
+tC6DNx32
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             0    13   13
+All              5    15   20
+Accuracy:	90%
+Fscore:		93%
+Precision:	87%
+Recall:		100%
+
+Epochs: 5
+
+tC6DNx32
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             1    12   13
+All              6    14   20
+Accuracy:	85%
+Fscore:		89%
+Precision:	86%
+Recall:		92%
+
+Epochs: 1
+
+urqjff5E
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             0    13   13
+All              5    15   20
+Accuracy:	90%
+Fscore:		93%
+Precision:	87%
+Recall:		100%
+
+Epochs: 2
+
+urqjff5E
+C:Predicted  False  True  All
+R:Actual                     
+False            6     1    7
+True            11     2   13
+All             17     3   20
+Accuracy:	40%
+Fscore:		25%
+Precision:	67%
+Recall:		15%
+
+Epochs: 3
+
+urqjff5E
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             0    13   13
+All              5    15   20
+Accuracy:	90%
+Fscore:		93%
+Precision:	87%
+Recall:		100%
+
+Epochs: 4
+
+urqjff5E
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             0    13   13
+All              5    15   20
+Accuracy:	90%
+Fscore:		93%
+Precision:	87%
+Recall:		100%
+
+Epochs: 5
+
+urqjff5E
+C:Predicted  False  True  All
+R:Actual                     
+False            5     2    7
+True             1    12   13
+All              6    14   20
+Accuracy:	85%
+Fscore:		89%
+Precision:	86%
+Recall:		92%
+
+Epochs: 1
+
+wf5sJUdO
+C:Predicted  False  True  All
+R:Actual                     
+False            3     6    9
+True             1    10   11
+All              4    16   20
+Accuracy:	65%
+Fscore:		74%
+Precision:	62%
+Recall:		91%
+
+Epochs: 2
+
+wf5sJUdO
+C:Predicted  False  True  All
+R:Actual                     
+False            9     0    9
+True             3     8   11
+All             12     8   20
+Accuracy:	85%
+Fscore:		84%
+Precision:	100%
+Recall:		73%
+
+Epochs: 3
+
+wf5sJUdO
+C:Predicted  False  True  All
+R:Actual                     
+False            3     6    9
+True             1    10   11
+All              4    16   20
+Accuracy:	65%
+Fscore:		74%
+Precision:	62%
+Recall:		91%
+
+Epochs: 4
+
+wf5sJUdO
+C:Predicted  False  True  All
+R:Actual                     
+False            4     5    9
+True             1    10   11
+All              5    15   20
+Accuracy:	70%
+Fscore:		77%
+Precision:	67%
+Recall:		91%
+
+Epochs: 5
+
+wf5sJUdO
+C:Predicted  False  True  All
+R:Actual                     
+False            9     0    9
+True             1    10   11
+All             10    10   20
+Accuracy:	95%
+Fscore:		95%
+Precision:	100%
+Recall:		91%
+
+Epochs: 1
+
+all_usr
+C:Predicted  False  True  All
+R:Actual                     
+False          206   102  308
+True            37   355  392
+All            243   457  700
+Accuracy:	80%
+Fscore:		84%
+Precision:	78%
+Recall:		91%
+
+Epochs: 2
+
+all_usr
+C:Predicted  False  True  All
+R:Actual                     
+False          222    86  308
+True            58   334  392
+All            280   420  700
+Accuracy:	79%
+Fscore:		82%
+Precision:	80%
+Recall:		85%
+
+Epochs: 3
+
+all_usr
+C:Predicted  False  True  All
+R:Actual                     
+False          198   110  308
+True            27   365  392
+All            225   475  700
+Accuracy:	80%
+Fscore:		84%
+Precision:	77%
+Recall:		93%
+
+Epochs: 4
+
+all_usr
+C:Predicted  False  True  All
+R:Actual                     
+False          204   104  308
+True            33   359  392
+All            237   463  700
+Accuracy:	80%
+Fscore:		84%
+Precision:	78%
+Recall:		92%
+
+Epochs: 5
+
+all_usr
+C:Predicted  False  True  All
+R:Actual                     
+False          255    53  308
+True            67   325  392
+All            322   378  700
+Accuracy:	83%
+Fscore:		84%
+Precision:	86%
+Recall:		83%
